@@ -1,0 +1,20 @@
+:root {
+  --accent: #94B814;
+  --text: #141719;
+  --secondary: #61696E;
+  --border: #D6DBD6;
+  --light-bg: #F6F7F5;
+  --white: #FFFFFF;
+  
+  /* Типографика */
+  --font-hero-h1: 68px;
+  --font-section-h2: 48px;
+  --font-eyebrow: 20px;
+  --font-body: 18px;
+  --font-nav: 21px;
+  
+  /* Размеры кнопок */
+  --btn-primary-width: 156px;
+  --btn-primary-height: 52px;
+  --btn-radius: 12px;
+}

@@ -1,0 +1,250 @@
+/* CSS Document */
+/* Основные ширины мониторов
+Пример распространённой сетки брейкпоинтов:
+xs <576 px (max-width: auto) — мобильная версия;
+sm >= 576 px (max-width: 540px) — портретная ориентация планшета;
+md >= 768 px (max-width: 720px) — альбомная ориентация планшета;
+lg >= 992 px (max-width: 960px) — ноутбук;
+xl >= 1200 px (max-width: 1140px) ;
+xxl >= 1440 px (max-width: 1320px) — десктоп.
+*/
+
+/* задаем ширину колонкам flex */
+.col_1 {flex: 1 1 calc((var(--col)*1) - var(--gutter));max-width: calc(var(--col) * 1);min-width: 0; /*border: solid 1px green;*/}
+.col_2 {flex: 1 1 calc((var(--col)*2) - var(--gutter));max-width: calc(var(--col) * 2);min-width: 0; /*border: solid 1px green;*/}
+.col_3 {flex: 1 1 calc((var(--col)*3) - var(--gutter));max-width: calc(var(--col) * 3);min-width: 0; /*border: solid 1px green;*/}
+.col_4 {flex: 1 1 calc((var(--col)*4) - var(--gutter));max-width: calc(var(--col) * 4);min-width: 0; /*border: solid 1px green;*/}
+.col_5 {flex: 1 1 calc((var(--col)*5) - var(--gutter));max-width: calc(var(--col) * 5);min-width: 0; /*border: solid 1px green;*/}
+.col_6 {flex: 1 1 calc((var(--col)*6) - var(--gutter));max-width: calc(var(--col) * 6);min-width: 0; /*border: solid 1px green;*/}
+.col_7 {flex: 1 1 calc((var(--col)*7) - var(--gutter));max-width: calc(var(--col) * 7);min-width: 0; /*border: solid 1px green;*/}
+.col_8 {flex: 1 1 calc((var(--col)*8) - var(--gutter));max-width: calc(var(--col) * 8);min-width: 0; /*border: solid 1px green;*/}
+.col_9 {flex: 1 1 calc((var(--col)*9) - var(--gutter));max-width: calc(var(--col) * 9);min-width: 0; /*border: solid 1px green;*/}
+.col_10 {flex: 1 1 calc((var(--col)*10) - var(--gutter));max-width: calc(var(--col) * 10);min-width: 0; /*border: solid 1px green;*/}
+.col_11 {flex: 1 1 calc((var(--col)*11) - var(--gutter));max-width: calc(var(--col) * 11);min-width: 0; /*border: solid 1px green;*/}
+.col_12 {flex: 1 1 calc((var(--col)*12) - var(--gutter));max-width: calc(var(--col) * 12);min-width: 0; /*border: solid 1px green;*/}
+
+/*[class*="col_"] {
+  min-width: 0;
+  padding: 0 calc(var(--gutter) / 2);
+}*/
+/* Большие десктопы */
+@media (min-width: 1440px){
+  .container{max-width: 75%;}
+}
+/* Ноутбуки и большие планшеты (hd)*/
+@media (max-width: 1439px) and (min-width: 1280px){
+	.container{max-width: 80%;width: 100%;}
+	.col_hd_3 {flex: 1 1 calc((var(--col)*3) - var(--gutter));max-width: calc(var(--col) * 3);min-width: 0; /*border: solid 1px green;*/}
+	.col_hd_4 {flex: 1 1 calc((var(--col)*4) - var(--gutter));max-width: calc(var(--col) * 4);min-width: 0; /*border: solid 1px green;*/}
+	.col_hd_6 {flex: 1 1 calc((var(--col)*6) - var(--gutter));max-width: calc(var(--col) * 6);min-width: 0; /*border: solid 1px green;*/}
+	.col_hd_12 {flex: 1 1 calc((var(--col)*12) - var(--gutter));max-width: calc(var(--col) * 12);min-width: 0; /*border: solid 1px green;*/}
+}
+/* Маленькие ноутбуки */
+@media (max-width: 1279px) and (min-width: 1024px){
+  .container{max-width: 95%;}
+}
+/* Планшеты (md)*/
+@media (max-width: 1023px) and (min-width: 768px){
+	.container{max-width: 90%;width: 100%;}
+	.header_left{order: 1; flex: 0 0 50%;}
+	.header_center{order: 3; flex: 0 0 100%;}
+	.header_right{order: 2; flex: 0 0 50%;}
+	.col_md_6 {flex: 1 1 calc((var(--col)*6) - var(--gutter));max-width: calc(var(--col) * 6);min-width: 0; /*border: solid 1px green;*/}
+	.col_md_12 {flex: 1 1 calc((var(--col)*12) - var(--gutter));max-width: calc(var(--col) * 12);min-width: 0; /*border: solid 1px green;*/}
+}
+/* Мобильные телефоны — 1 карточка в ряду, на всю ширину (s)*/
+@media (max-width: 767px){
+	.container{max-width: 100%;width: 100%;}
+	.col_s_6 {flex: 1 1 calc((var(--col)*6) - var(--gutter));max-width: calc(var(--col) * 6);min-width: 0;}
+	.col_s_8 {flex: 1 1 calc((var(--col)*8) - var(--gutter));max-width: calc(var(--col) * 8);min-width: 0;}
+	.col_s_12 {flex: 1 1 calc((var(--col)*12) - var(--gutter));max-width: calc(var(--col) * 12);min-width: 0;}
+	
+	header{display: none !important;}
+	/* Navbar всегда виден на мобильном */
+	#navbar {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    display: flex !important;
+    background-color: var(--mygray); /* Фон навигации */
+  }  
+  #navbar .container {
+    justify-content: space-between;
+    align-items: center;
+  }  
+  /* Логотип */
+  .nav_logo {
+    display: block !important;
+    flex: 0 0 auto;
+  }  
+  .nav_logo img {
+    height: 30px;
+    width: auto;
+  }  
+  /* ✅ Кнопка CTA - выравнивание по центру */
+  .nav_cta {
+    display: block !important;
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0;
+  }
+  .nav_cta .button {
+    padding: 8px 20px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: visible;
+    min-width: auto;
+    margin: 0;
+    display: inline-block;
+  }  
+  /* Бургер - стили для DIV */
+  .nav_burger {
+    display: block !important;
+    order: 2;
+    flex: 0 0 auto;
+  }  
+  /* ✅ Стили для BUTTON внутри div */
+  .nav_burger button {
+    background-color: var(--mygray) !important; /* Фон как у nav */
+    border: none;
+    color: #fff; /* Белые линии */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin: 0;
+  }  
+  /* ✅ Меню на всю ширину */
+  .nav_menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: 100%; /* ✅ Ширина 100% */
+    background-color: var(--mygray);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    z-index: 999;
+  }  
+  
+  /* Показываем меню при клике на бургер */
+  .nav_menu.is_active {
+    display: block;
+  }
+  
+  .nav_menu ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav_menu ul li {
+    margin: 0;
+  }
+  
+  .nav_menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav_menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+	 /* Пункт с подменю */
+  .nav_menu ul li.has_submenu {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Ссылка в пункте с подменю */
+  .nav_menu ul li.has_submenu > a {
+    position: relative;
+    padding-right: 40px; /* Место для стрелки */
+  }  
+  /* Стрелка-индикатор (по умолчанию вниз) */
+  .nav_menu ul li.has_submenu > a::before {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }  
+  /* Подменю (скрыто по умолчанию) */
+  .nav_menu ul li.has_submenu > ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.15); /* Чуть темнее фон */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }  
+  /* Показываем подменю при активном классе */
+  .nav_menu ul li.has_submenu.is_open > ul {
+    display: block;
+    max-height: 500px; /* Достаточно для раскрытия */
+  }  
+  /* Поворот стрелки при открытии */
+  .nav_menu ul li.has_submenu.is_open > a::before {
+    transform: translateY(-50%) rotate(180deg); /* Стрелка вверх */
+  }  
+  /* Ссылки подменю */
+  .nav_menu ul li.has_submenu > ul li a {
+    display: block;
+    padding: 12px 40px; /* Больший отступ слева для вложенности */
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+  }  
+  /* Подчеркивание для подменю (как у основных пунктов) */
+  .nav_menu ul li.has_submenu > ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 40px;
+    width: calc(100% - 80px);
+    height: 2px;
+    background-color: var(--lgreen);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }  
+  .nav_menu ul li.has_submenu > ul li a:hover {
+    color: var(--lgreen);
+    background-color: rgba(255, 255, 255, 0.05);
+  }  
+  .nav_menu ul li.has_submenu > ul li a:hover::after {
+    transform: scaleX(1);
+  }  
+  /* Разделитель между пунктами подменю */
+  .nav_menu ul li.has_submenu > ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .header_right .button {padding: 12px 30px;font-size: 1rem;min-width: 150px;}
+	.footer_up_left, .footer_up_center, .footer_up_right{text-align: center; justify-content: center;}
+	.footer_down_left, .footer_down_right{align-items: center;}
+}
+/* Дополнительно: можно плавно добавить переход ширины для красоты */
+/*.services_card {transition: flex-basis 0.3s ease, max-width 0.3s ease;}*/

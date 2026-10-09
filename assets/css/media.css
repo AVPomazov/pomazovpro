@@ -1,0 +1,45 @@
+/* CSS Document */
+/* Основные ширины мониторов Пример распространённой сетки брейкпоинтов:*/
+/* (hd) >1280px: десктопы */
+/* (md)  <960px: маленькие десктопы */
+/* (sd) ПЛАНШЕТ: <768px */
+/* (s) <480 (опционально) */
+
+/* задаем ширину колонкам flex */
+.col_1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0; /*border: solid 1px green;*/}
+.col_2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0; border: solid 1px green;}
+.col_3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0; /*border: solid 1px green;*/}
+.col_4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0; /*border: solid 1px green;*/}
+.col_5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0; /*border: solid 1px green;*/}
+.col_6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0; /*border: solid 1px green;*/}
+.col_7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0; /*border: solid 1px green;*/}
+.col_8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0; border: solid 1px green;}
+.col_9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0; /*border: solid 1px green;*/}
+.col_10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0; /*border: solid 1px green;*/}
+.col_11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0; /*border: solid 1px green;*/}
+.col_12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0; /*border: solid 1px green;*/}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+	/*border: solid 1px green; /* для отладки */
+}
+.grid_1 {grid-template-columns: repeat(1, 1fr);/*border: solid 1px green; /* для отладки */}
+.grid_2 {grid-template-columns: repeat(2, 1fr);/*border: solid 1px green; /* для отладки */}
+.grid_3 {grid-template-columns: repeat(3, 1fr);/*border: solid 1px green; /* для отладки */}
+.grid_4 {grid-template-columns: repeat(4, 1fr);/*border: solid 1px green; /* для отладки */}
+.grid_6 {grid-template-columns: repeat(6, 1fr);/*border: solid 1px green; /* для отладки */}
+
+/* (xl) >1280px: десктопы */
+@media (max-width: 1280px) {
+}
+/* (md)  960px: маленькие десктопы */
+@media (max-width: 960px) {
+}
+/* (sm) ПЛАНШЕТ: 768px */
+@media (max-width: 768px) {
+}
+/* (s) (опционально) */
+@media (max-width: 480px) {
+}

@@ -1,0 +1,278 @@
+/* CSS Document */
+@charset "UTF-8";
+/* Подключение нормализации и шрифтов */
+@import url("normalize.css");
+@import url("fonts.css");
+/* --- CSS-переменные (единая дизайн-система) --- */
+:root {
+  /* ЦВЕТА */
+  --white: #ffffff;
+  --text: #14171a;
+  --secondary: #61696e;
+  --accent: #94b814;
+  --hover: #1cae05;
+  --btnhover: #add60d;
+  --accent-light: #ebf5c7;
+  --bglight: #f6f7f5;
+  --bgfooter: #0a1f33;
+  --border: #d6dbd6;
+  --footer-border: #334757;
+  --footertext: #99abb5;
+  --footer-muted: #b8c4cc;
+  --flabel: #616b75;
+  --ferror: #db2e2e;
+  --telegram: #0088cc;
+
+  /* === ОТСТУПЫ И СЕТКА === */
+  --col: calc(100%/12);
+  --gutter: 20px;
+  --gup: 20px;
+  --space-xs: 4px; /* микро-отступы (иконки внутри кнопок) */
+  --space-sm: 8px; /* мелкие отступы (gap в фильтрах) */
+  --space-md: 12px; /* средние (gap в navbar_actions, padding кнопок) */
+  --space-base: 16px; /* базовый (margin заголовков, padding карточек) */
+  --space-lg: 20px; /* основной (gutter, gap в grid) */
+  --space-xl: 24px; /* крупные (padding карточек) */
+  --space-2xl: 32px; /* очень крупные (padding CTA формы) */
+  --space-3xl: 40px; /* секционные (margin заголовков секций) */
+  --space-4xl: 60px; /* большие (отступы между секциями) */
+
+  /* === РАДИУСЫ === */
+  --radius-sm: 2px; /* burger span */
+  --radius-md: 8px; /* мелкие элементы */
+  --radius-base: 12px; /* основной: кнопки, карточки, инпуты, картинки */
+  --radius-lg: 16px; /* крупные обёртки (CTA форма) */
+  --radius-full: 9999px; /* круглые/пилюли (FAB, фильтры, бейджи) */
+}
+/* --- Reset (сброс стилей браузера) --- */
+*,*::before,*::after {box-sizing: inherit; /*margin: 0;	padding: 0;*/}
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body::before {
+  content: "";
+  height: 0;
+  visibility: hidden;
+}
+header,nav,main,footer {width: 100%; /*border: 1px solid red; /*для отладки*/}
+main {
+  flex-grow: 1; /* растягиваем вертикально */
+  min-height: 0;
+}
+.debug {border: 1px dotted green;}
+/* --- Типографика --- */
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+h1 {font-size: 36px; font-weight: 900;}
+h2 {font-size: 30px;}
+h3 {font-size: 24px;}
+h4 {font-size: 20px;}
+h5 {font-size: 18px;}
+h6 {font-size: 16px;}
+p {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+/* Ссылки */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {color: var(--hover);}
+/* Списки */
+ul,ol {margin-bottom: 16px; padding-left: 24px;}
+li {margin-bottom: 8px;}
+/* Изображения */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Универсальный отступ для всех якорных ссылок */
+[id] { scroll-margin-top: 110px;}
+/* Общие элементы сайта */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* ШАПКА САЙТА */
+.navbar {
+  height: clamp(70px, 7vw, 92px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Красивая тень */
+  transition: box-shadow 0.3s ease;
+  background: var(--white);
+}
+.navbar .container {
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+}
+.navbar_logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.navbar_logo img {height: clamp(25px, 3vw, 40px);}
+/* Меню сайта */
+.navbar_menu {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-around;
+  /*align-items: center;*/
+  min-width: 0;
+  margin: 0 10px;
+  padding: 0;
+}
+.navbar_menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+}
+.navbar_menu ul li {margin: 0;}
+.navbar_menu ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-family: "Inter";
+  font-weight: 500;
+  text-transform: uppercase;
+  display: block;
+  font-size: clamp(10px, 0.9vw, 14px);
+  padding: clamp(6px, 0.6vw, 12px); /* clamp(5px, 0.9vw, 15px) 12px;*/
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar_menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%; /* Центр */
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--hover);
+  transition: width 0.3s ease;
+}
+.navbar_menu ul li a:hover {color: var(--hover);}
+.navbar_menu ul li a:hover::after {width: calc(100% - 20px);}
+/* === ПОДМЕНЮ === */
+.navbar_menu ul li.has_submenu {
+  position: relative;
+  /*transition: width 0.3s ease;*/
+}
+.navbar_menu ul li.has_submenu > a {
+  /*position: relative;*/
+  padding-right: 17px; /* Место для стрелки */
+}
+/* Стрелка-индикатор (по умолчанию вниз) */
+.navbar_menu ul li.has_submenu > a::before {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: var(--text);
+  transition: transform 0.3s ease;
+}
+/* Подменю (скрыто по умолчанию) */
+.navbar_menu ul li.has_submenu > ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--border);
+  /*overflow: hidden;*/
+}
+/* Показываем подменю при наведении */
+.navbar_menu ul li.has_submenu:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* Поворот стрелки при наведении */
+.navbar_menu ul li.has_submenu:hover > a::before {transform: translateY(-50%) rotate(180deg);}
+/* Ссылки подменю */
+.navbar_menu ul li.has_submenu > ul li a {
+  display: inline-flex;
+  padding: 10px 15px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(10px, 0.9vw, 14px);
+  text-transform: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  /*position: relative;*/
+  /*white-space: nowrap;*/
+  /*font-family: 'Inter';*/
+}
+/* Подчеркивание точно по ширине текста */
+.navbar_menu ul li.has_submenu > ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  width: calc(100% - 20px); /* Ширина минус padding */
+  height: 2px;
+  background-color: var(--hover);
+  transform: scaleX(0);
+  transform-origin: left center; /* Растет слева направо */
+  transition: transform 0.3s ease;
+}
+.navbar_menu ul li.has_submenu > ul li a:hover {color: var(--hover);}
+.navbar_menu ul li.has_submenu > ul li a:hover::after {transform: scaleX(1);}
+/* ACTIONS */
+.navbar_actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}

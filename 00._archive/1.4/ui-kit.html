@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Kit — POMAZOV.PRO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/form.css">
+  <link rel="stylesheet" href="assets/css/media.css">
+  <style>
+    /* Только для UI Kit — не влияет на основные страницы */
+    .kit-section { margin-bottom: 60px; }
+    .kit-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .kit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .kit-note {
+      font-size: 13px;
+      color: var(--secondary);
+      font-style: italic;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- НАВИГАЦИЯ -->
+  <nav id="navbar" class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav_logo col_2 col_md_3">
+        <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO">
+      </a>
+      <div class="nav_menu col_10">
+        <ul>
+          <li class="has_submenu">
+            <a href="#">Проекты</a>
+            <ul>
+              <li><a href="#">Дома</a></li>
+              <li><a href="#">Хозблоки</a></li>
+              <li><a href="#">Беседки</a></li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="#">Проектирование</a>
+            <ul>
+              <li><a href="brief.html">Бриф на проектирование</a></li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="#">Полезности</a>
+            <ul>
+              <li><a href="#">Статьи</a></li>
+              <li><a href="#">Блог</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Оплата и доставка</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+        <div class="nav_menu_cta">
+          <a href="#" class="button">Хочу проект</a>
+        </div>
+      </div>
+      <button type="button" class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main style="padding: 40px 0;">
+    <div class="container" style="display: block;">
+
+      <!-- ЗАГОЛОВОК UI KIT -->
+      <div class="kit-section">
+        <h1>UI Kit — POMAZOV.PRO</h1>
+        <p>Все компоненты сайта на одной странице. Используется для отладки и согласования с дизайнером.</p>
+        <p class="kit-note">Последнее обновление: 9 октября 2026</p>
+      </div>
+
+      <!-- 1. ТИПОГРАФИКА -->
+      <section class="kit-section">
+        <div class="kit-label">1. Типографика</div>
+        <h1>Заголовок H1 — 36px, 900</h1>
+        <h2>Заголовок H2 — 30px, 700</h2>
+        <h3>Заголовок H3 — 24px, 700</h3>
+        <h4>Заголовок H4 — 20px, 700</h4>
+        <h5>Заголовок H5 — 18px, 700</h5>
+        <h6>Заголовок H6 — 16px, 700</h6>
+        <p>Обычный параграф. Inter 16px, line-height 1.6, цвет var(--text). Используется для основного текста.</p>
+        <p style="color: var(--secondary);">Вторичный текст (var(--secondary)) — для подписей, характеристик, описаний.</p>
+        <p><a href="#">Обычная ссылка</a> — цвет var(--accent), при наведении var(--hover).</p>
+        <ul>
+          <li>Маркированный список</li>
+          <li>Элемент списка</li>
+          <li>Ещё элемент</li>
+        </ul>
+        <ol>
+          <li>Нумерованный список</li>
+          <li>Второй пункт</li>
+          <li>Третий пункт</li>
+        </ol>
+      </section>
+
+      <!-- 2. КНОПКИ -->
+      <section class="kit-section">
+        <div class="kit-label">2. Кнопки</div>
+        <div class="kit-row">
+          <a href="#" class="button">Primary</a>
+          <a href="#" class="button button-secondary">Secondary</a>
+          <a href="#" class="button button-large">Large Primary</a>
+          <a href="#" class="button button-filter">Filter</a>
+          <a href="#" class="button button-secondary button-filter">Filter Secondary</a>
+        </div>
+        <p class="kit-note">Состояния: default, :hover (btnhover), :active (translateY 0)</p>
+      </section>
+
+      <!-- 3. СЕКЦИИ -->
+      <section class="kit-section">
+        <div class="kit-label">3. Секции (фон)</div>
+        <div class="section section-white" style="padding: 30px; border: 1px dashed var(--border);">
+          <p>.section-white — фон var(--white)</p>
+        </div>
+        <div class="section section-gray" style="padding: 30px; border: 1px dashed var(--border);">
+          <p>.section-gray — фон var(--bglight)</p>
+        </div>
+      </section>
+
+      <!-- 4. СЕТКИ -->
+      <section class="kit-section">
+        <div class="kit-label">4. Сетки (grid)</div>
+        <p class="kit-note">Базовый класс .grid + модификаторы количества колонок</p>
+        <div class="kit-row">
+          <div class="grid grid_4" style="gap: 10px;">
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
+          </div>
+        </div>
+        <div class="kit-row">
+          <div class="grid grid_3" style="gap: 10px;">
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
+          </div>
+        </div>
+        <div class="kit-row">
+          <div class="grid grid_2" style="gap: 10px;">
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_2</div>
+            <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_2</div>
+          </div>
+        </div>
+        <p class="kit-note">Адаптивные модификаторы: grid_md2, grid_md1, grid_sm1, grid_s1</p>
+      </section>
+
+      <!-- 5. КАРТОЧКИ INFO-CARD -->
+      <section class="kit-section">
+        <div class="kit-label">5. Карточки .info-card</div>
+        <div class="grid grid_4" style="gap: 20px;">
+          <div class="info-card">
+            <p class="card-number card-number_accent">01</p>
+            <h3 class="info-card_title">Обычная</h3>
+            <p class="info-card_text">Белый фон, рамка var(--border), hover-эффект.</p>
+          </div>
+          <div class="info-card info-card_gray">
+            <p class="card-number card-number_accent">02</p>
+            <h3 class="info-card_title">.info-card_gray</h3>
+            <p class="info-card_text">Фон var(--bglight).</p>
+          </div>
+          <div class="info-card info-card_accent">
+            <p class="card-number card-number_accent">03</p>
+            <h3 class="info-card_title">.info-card_accent</h3>
+            <p class="info-card_text">Фон #EBF5C7, рамка var(--accent).</p>
+          </div>
+          <div class="info-card info-card_transparent">
+            <p class="card-number card-number_circle">04</p>
+            <hr class="process-line">
+            <h3 class="info-card_title">.info-card_transparent</h3>
+            <p class="info-card_text">Без фона и рамки. Для "Как это работает".</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. НОМЕРА КАРТОЧЕК -->
+      <section class="kit-section">
+        <div class="kit-label">6. Номера карточек</div>
+        <div class="kit-row">
+          <p class="card-number">01 — .card-number (базовый)</p>
+          <p class="card-number card-number_accent">02 — .card-number_accent</p>
+          <p class="card-number card-number_circle">03 — .card-number_circle</p>
+        </div>
+        <div class="kit-row">
+          <hr class="process-line" style="width: 200px;">
+          <span class="kit-note">.process-line — линия под круглым номером</span>
+        </div>
+      </section>
+
+      <!-- 7. КАРТОЧКА ПРОЕКТА -->
+      <section class="kit-section">
+        <div class="kit-label">7. Карточка проекта .project-card</div>
+        <div class="grid grid_3" style="gap: 20px;">
+          <div class="project-card">
+            <img src="assets/img/projects/house-01.jpg" alt="Дом 01" class="project-card_img">
+            <div class="project-card_content">
+              <h3 class="info-card_title">Дом 01</h3>
+              <div class="project-card_meta">
+                <span>96 м²</span>
+                <span>8×12 м</span>
+                <span>1 этаж</span>
+              </div>
+              <div class="project-card_footer">
+                <span class="project-card_price">от 29 000 ₽</span>
+                <a href="#" class="project-card_link">Подробнее →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="assets/img/projects/house-02.jpg" alt="Дом 02" class="project-card_img">
+            <div class="project-card_content">
+              <h3 class="info-card_title">Дом 02</h3>
+              <div class="project-card_meta">
+                <span>120 м²</span>
+                <span>10×12 м</span>
+                <span>2 этажа</span>
+              </div>
+              <div class="project-card_footer">
+                <span class="project-card_price">от 39 000 ₽</span>
+                <a href="#" class="project-card_link">Подробнее →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="assets/img/projects/house-03.jpg" alt="Дом 03" class="project-card_img">
+            <div class="project-card_content">
+              <h3 class="info-card_title">Дом 03 — длинное название в две строки для теста</h3>
+              <div class="project-card_meta">
+                <span>84 м²</span>
+                <span>7×12 м</span>
+                <span>1 этаж</span>
+              </div>
+              <div class="project-card_footer">
+                <span class="project-card_price">от 25 000 ₽</span>
+                <a href="#" class="project-card_link">Подробнее →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="kit-note">Третья карточка — тест выравнивания footer при разном количестве строк в заголовке.</p>
+      </section>
+
+      <!-- 8. STAT-CARD -->
+      <section class="kit-section">
+        <div class="kit-label">8. Карточка статистики .stat-card</div>
+        <div class="grid grid_4" style="gap: 20px;">
+          <div class="info-card stat-card">
+            <div class="stat-card_number">100+</div>
+            <div class="stat-card_label">проектов под ключ</div>
+          </div>
+          <div class="info-card stat-card">
+            <div class="stat-card_number">20 лет</div>
+            <div class="stat-card_label">опыта работы</div>
+          </div>
+          <div class="info-card stat-card">
+            <div class="stat-card_number">100+</div>
+            <div class="stat-card_label">довольных клиентов</div>
+          </div>
+          <div class="info-card stat-card">
+            <div class="stat-card_number">24/7</div>
+            <div class="stat-card_label">поддержка</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. ФОРМЫ -->
+      <section class="kit-section">
+        <div class="kit-label">9. Формы (из form.css)</div>
+        <div class="grid grid_2" style="gap: 20px;">
+          <div>
+            <div class="form-group">
+              <label for="kit-name">Имя</label>
+              <input type="text" id="kit-name" class="form-input" placeholder="Введите имя">
+            </div>
+            <div class="form-group">
+              <label for="kit-tel">Телефон</label>
+              <input type="tel" id="kit-tel" class="form-input" placeholder="+7(000) 000-00-00">
+            </div>
+            <div class="form-group">
+              <label for="kit-email">Email</label>
+              <input type="email" id="kit-email" class="form-input" placeholder="mail@example.com">
+            </div>
+            <div class="form-group">
+              <label>Textarea</label>
+              <textarea class="form-input" rows="3" placeholder="Комментарий"></textarea>
+            </div>
+          </div>
+          <div>
+            <div class="form-group">
+              <label>Radio</label>
+              <div class="form-radio-group">
+                <label class="form-radio"><input type="radio" name="kit-radio" checked><span>Вариант 1</span></label>
+                <label class="form-radio"><input type="radio" name="kit-radio"><span>Вариант 2</span></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Checkbox</label>
+              <label class="form-checkbox"><input type="checkbox" checked><span>Согласен на обработку ПД</span></label>
+            </div>
+            <div class="form-group">
+              <label>File</label>
+              <label class="form-file">
+                <input type="file">
+                <span class="file-label">Выберите файл</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ФИЛЬТРЫ / SWITCH GROUP -->
+      <section class="kit-section">
+        <div class="kit-label">10. Фильтры (.form-switch-group)</div>
+        <div class="form-switch-group">
+          <button class="button button-filter">Все</button>
+          <button class="button button-secondary button-filter">Дома</button>
+          <button class="button button-secondary button-filter">Хозблоки</button>
+          <button class="button button-secondary button-filter">Беседки</button>
+        </div>
+      </section>
+
+      <!-- 11. BREADCRUMBS -->
+      <section class="kit-section">
+        <div class="kit-label">11. Хлебные крошки</div>
+        <nav class="breadcrumbs">
+          <a href="index.html">Главная</a>
+          <span class="separator">/</span>
+          <a href="#">Проектирование</a>
+          <span class="separator">/</span>
+          <span class="current">Бриф на проектирование</span>
+        </nav>
+      </section>
+
+      <!-- 12. PAGE HEADER -->
+      <section class="kit-section">
+        <div class="kit-label">12. Шапка страницы (.page-header)</div>
+        <header class="page-header" style="padding: 20px;">
+          <nav class="breadcrumbs">
+            <a href="index.html">Главная</a>
+            <span class="separator">/</span>
+            <span class="current">Обо мне</span>
+          </nav>
+          <h1 class="page-title">Инженерный подход к проектированию</h1>
+          <p>Личный бренд инженера-проектировщика: готовые проекты, индивидуальная работа и BIM.</p>
+        </header>
+      </section>
+
+      <!-- 13. ABOUT INTRO -->
+      <section class="kit-section">
+        <div class="kit-label">13. Блок "Обо мне" (.about-intro)</div>
+        <div class="grid grid_2 about-intro">
+          <div class="about-text">
+            <h2>Привет, я Алексей Помазов</h2>
+            <p>Я инженер-проектировщик с опытом работы с 2001 года.</p>
+            <p>Создаю рабочую документацию, по которой строители задают минимум вопросов.</p>
+          </div>
+          <div class="about-image">
+            <img src="assets/img/about/photo_8.jpg" alt="Алексей Помазов">
+          </div>
+        </div>
+        <p class="kit-note">На десктопе фото слева (order: 1), текст справа. На мобильном — текст сверху, фото снизу.</p>
+      </section>
+
+      <!-- 14. ОТЗЫВ -->
+      <section class="kit-section">
+        <div class="kit-label">14. Карточка отзыва</div>
+        <div class="info-card" style="max-width: 500px;">
+          <p class="quote-mark">"</p>
+          <p class="info-card_text">Здесь размещается реальный отзыв клиента о качестве проекта, понятности документации и процессе работы.</p>
+          <div class="stat-card_label" style="margin-top: auto; font-weight: 500;">Имя клиента • название проекта</div>
+        </div>
+      </section>
+
+      <!-- 15. FLOATING BUTTONS -->
+      <section class="kit-section">
+        <div class="kit-label">15. Плавающие кнопки</div>
+        <p class="kit-note">См. правый нижний угол экрана — .fab-telegram и .scroll-to-top</p>
+        <div class="kit-row" style="margin-top: 20px;">
+          <a href="#" class="fab-telegram" style="position: static; display: inline-flex;" aria-label="Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+          </a>
+          <a href="#" class="scroll-to-top" style="position: static; display: inline-flex; opacity: 1; visibility: visible; transform: none;" aria-label="Наверх">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- 16. ЦВЕТА ДИЗАЙН-СИСТЕМЫ -->
+      <section class="kit-section">
+        <div class="kit-label">16. Цвета дизайн-системы</div>
+        <div class="kit-row">
+          <div style="width: 80px; height: 80px; background: var(--accent); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--btnhover); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--hover); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--text); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--secondary); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--border); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--bglight); border: 1px solid var(--border); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--bgfooter); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: var(--footertext); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: #EBF5C7; border: 1px solid var(--border); border-radius: 8px;"></div>
+          <div style="width: 80px; height: 80px; background: #0088cc; border-radius: 8px;"></div>
+        </div>
+        <div class="kit-row" style="font-size: 12px; color: var(--secondary);">
+          <span>accent</span><span>btnhover</span><span>hover</span><span>text</span><span>secondary</span><span>border</span><span>bglight</span><span>bgfooter</span><span>footertext</span><span>#EBF5C7 (accent-light)</span><span>#0088cc (telegram)</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer>
+    <div class="container">
+      <div class="footer_up">
+        <div class="footer_logo col_3 col_md_12">
+          <a href="index.html"><img src="assets/img/common/footerlogo.svg" alt=""></a>
+          <p>Личный бренд инженера-проектировщика.<br>Готовые проекты домов, хозблоков и беседок.</p>
+        </div>
+        <div class="footer_nav col_4 col_md_6 col_sm_12">
+          <ul>
+            <li class="footer_submenu">Проекты
+              <ul>
+                <li><a href="#">Дома</a></li>
+                <li><a href="#">Хозблоки</a></li>
+                <li><a href="#">Беседки</a></li>
+              </ul>
+            </li>
+            <li class="footer_submenu">Проектирование
+              <ul>
+                <li><a href="#">Проектирование домов</a></li>
+                <li><a href="#">Индивидуальные проекты</a></li>
+                <li><a href="#">BIM-проектирование</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_nav col_4 col_md_6 col_sm_12">
+          <ul>
+            <li class="footer_submenu">Полезности
+              <ul>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Блог</a></li>
+              </ul>
+            </li>
+            <li class="footer_submenu">Социальные сети
+              <div class="footer-social">
+                <a href="#" class="social-btn telegram" aria-label="Telegram"></a>
+                <a href="#" class="social-btn vk" aria-label="ВКонтакте"></a>
+                <a href="#" class="social-btn youtube" aria-label="YouTube"></a>
+                <a href="#" class="social-btn dzen" aria-label="dzen"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_down">
+        <div class="footer_copyrite col_6 col_sm_12">
+          <p><script>document.write(new Date().getFullYear())</script> © "POMAZOV.PRO"</p>
+        </div>
+        <div class="footer_docs col_6 col_sm_12">
+          <a href="oferta.html">Оферта</a>
+          <span>•</span>
+          <a href="privacy.html">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB КНОПКИ -->
+  <a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+  </a>
+  <a href="#top" class="scroll-to-top" aria-label="Наверх">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
