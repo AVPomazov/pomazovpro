@@ -1,0 +1,7 @@
+00_archive/
+01. Figma export/
+02. Разное/
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
