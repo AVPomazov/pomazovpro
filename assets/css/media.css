@@ -6,18 +6,18 @@
 /* (s) <480 (опционально) */
 
 /* задаем ширину колонкам flex */
-.col_1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0; /*border: solid 1px green;*/}
-.col_2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0; border: solid 1px green;}
-.col_3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0; /*border: solid 1px green;*/}
-.col_4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0; /*border: solid 1px green;*/}
-.col_5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0; /*border: solid 1px green;*/}
-.col_6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0; /*border: solid 1px green;*/}
-.col_7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0; /*border: solid 1px green;*/}
-.col_8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0; border: solid 1px green;}
-.col_9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0; /*border: solid 1px green;*/}
-.col_10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0; /*border: solid 1px green;*/}
-.col_11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0; /*border: solid 1px green;*/}
-.col_12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0; /*border: solid 1px green;*/}
+.col_1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0;}
+.col_2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0;}
+.col_3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0;}
+.col_4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0;}
+.col_5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0;}
+.col_6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0;}
+.col_7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0;}
+.col_8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0;}
+.col_9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0;}
+.col_10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0;}
+.col_11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0;}
+.col_12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0;}
 .grid{
   display: grid;
   grid-template-columns: 1fr;
@@ -25,11 +25,45 @@
   width: 100%;
 	/*border: solid 1px green; /* для отладки */
 }
-.grid_1 {grid-template-columns: repeat(1, 1fr);/*border: solid 1px green; /* для отладки */}
-.grid_2 {grid-template-columns: repeat(2, 1fr);/*border: solid 1px green; /* для отладки */}
-.grid_3 {grid-template-columns: repeat(3, 1fr);/*border: solid 1px green; /* для отладки */}
-.grid_4 {grid-template-columns: repeat(4, 1fr);/*border: solid 1px green; /* для отладки */}
-.grid_6 {grid-template-columns: repeat(6, 1fr);/*border: solid 1px green; /* для отладки */}
+.grid_1 {grid-template-columns: repeat(1, 1fr);}
+.grid_2 {grid-template-columns: repeat(2, 1fr);}
+.grid_3 {grid-template-columns: repeat(3, 1fr);}
+.grid_4 {grid-template-columns: repeat(4, 1fr);}
+.grid_6 {grid-template-columns: repeat(6, 1fr);}
+
+/* БУРГЕР-МЕНЮ (Мобильная навигация) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+.burger.is_active span:nth-child(1) {transform: translateY(8px) rotate(45deg);}
+.burger.is_active span:nth-child(2) {opacity: 0;}
+.burger.is_active span:nth-child(3) {transform: translateY(-8px) rotate(-45deg);}
+.navbar_menu_mobile_cta{
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+button_cat{width: 80%; max-width: 300px;}
 
 /* (xl) >1280px: десктопы */
 @media (max-width: 1280px) {
@@ -39,7 +73,75 @@
 }
 /* (sm) ПЛАНШЕТ: 768px */
 @media (max-width: 768px) {
-}
+  .burger {display: flex;}
+  .navbar_menu {
+    position: fixed; /* Фиксируем относительно окна браузера */
+    top: clamp(70px, 7vw, 92px); /* ПОИГРАЙ С ЭТИМ: должно совпадать с высотой .navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - clamp(70px, 7vw, 92px)); /* Высота экрана минус высота шапки */
+    background-color: var(--white);
+    /* backdrop-filter: blur(10px); ПОИГРАЙ С ЭТИМ: раскомментируй для эффекта матового стекла (требует полупрозрачного фона) */
+    border-top: 1px solid var(--border);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;    
+    /* Скрываем с анимацией */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); /* Слегка сдвинуто вверх */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* ПОИГРАЙ С ЭТИМ: плавность появления (cubic-bezier делает её "дорогой") */
+    z-index: 1000;
+  }
+  .navbar_menu ul {
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+    width: 100%;
+    padding: 0;
+    padding-top: 10px;
+    margin:0;
+  }
+  .navbar_menu ul li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .navbar_menu ul li a {
+    font-size: 16px; /* ПОИГРАЙ С ЭТИМ: размер шрифта в мобильном меню */
+    padding: 16px 0;
+    border-bottom: 1px solid var(--bglight); /* ПОИГРАЙ С ЭТИМ: разделители между пунктами */
+    padding-left: 16px;
+  }
+  .navbar_menu ul li a::after {display: none;}
+  .navbar_menu ul li.has_submenu > ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background-color: var(--bglight); /* ПОИГРАЙ С ЭТИМ: фон подменю, чтобы отличался */
+    padding: 0;
+    margin-top: -10px; /* Чуть подтягиваем к родителю */
+  }
+  .navbar_menu ul li.has_submenu > ul li a {
+    font-size: 16px;
+    padding: 12px 0;
+    color: var(--secondary);
+  }
+  .navbar_menu.is_active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    padding: 0 20px;
+    margin: 0;
+  }
+  .navbar_actions {display: none;}
+  .navbar_menu_mobile_cta{display: flex;justify-content: center;}
+} 
 /* (s) (опционально) */
 @media (max-width: 480px) {
 }

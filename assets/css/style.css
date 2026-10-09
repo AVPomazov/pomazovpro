@@ -160,10 +160,11 @@ img {
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
-  border-bottom: 1px solid var(--border);
+  /* border-bottom: 1px solid var(--border); */
+  /* justify-content: space-between; */
   width: 100%;
 }
-.navbar_menu ul li {margin: 0;}
+.navbar_menu ul li {margin: 0;padding-right: 40px;}
 .navbar_menu ul li a {
   color: var(--text);
   text-decoration: none;
@@ -254,7 +255,6 @@ img {
   /*white-space: nowrap;*/
   /*font-family: 'Inter';*/
 }
-/* Подчеркивание точно по ширине текста */
 .navbar_menu ul li.has_submenu > ul li a::after {
   content: "";
   position: absolute;
@@ -275,4 +275,6 @@ img {
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  min-width: 192px;
+  justify-content: flex-end;
 }
