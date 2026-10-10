@@ -32,10 +32,66 @@
         font-style: italic;
         margin-top: 8px;
       }
+      @media (max-width: 960px) {
+      .col_md1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0;}
+      .col_md2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0;}
+      .col_md3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0;}
+      .col_md4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0;}
+      .col_md5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0;}
+      .col_md6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0;}
+      .col_md7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0;}
+      .col_md8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0;}
+      .col_md9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0;}
+      .col_md10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0;}
+      .col_md11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0;}
+      .col_md12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0;}
+      .grid_md1 {grid-template-columns: repeat(1, 1fr);}
+      .grid_md2 {grid-template-columns: repeat(2, 1fr);}
+      .grid_md3 {grid-template-columns: repeat(3, 1fr);}
+      .grid_md4 {grid-template-columns: repeat(4, 1fr);}
+      .grid_md6 {grid-template-columns: repeat(6, 1fr);}
+      }
+      @media (max-width: 768px) {
+        .col_sm1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0;}
+        .col_sm2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0;}
+        .col_sm3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0;}
+        .col_sm4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0;}
+        .col_sm5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0;}
+        .col_sm6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0;}
+        .col_sm7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0;}
+        .col_sm8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0;}
+        .col_sm9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0;}
+        .col_sm10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0;}
+        .col_sm11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0;}
+        .col_sm12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0;}
+        .grid_sm1 {grid-template-columns: repeat(1, 1fr);}
+        .grid_sm2 {grid-template-columns: repeat(2, 1fr);}
+        .grid_sm3 {grid-template-columns: repeat(3, 1fr);}
+        .grid_sm4 {grid-template-columns: repeat(4, 1fr);}
+        .grid_sm6 {grid-template-columns: repeat(6, 1fr);}
+      }
+      @media (max-width: 480px) {
+        .col_s1{flex: 1 1 calc(var(--col)*1); max-width: calc(var(--col)*1) ;min-width: 0;}
+        .col_s2{flex: 1 1 calc(var(--col)*2); max-width: calc(var(--col)*2) ;min-width: 0;}
+        .col_s3{flex: 1 1 calc(var(--col)*3); max-width: calc(var(--col)*3) ;min-width: 0;}
+        .col_s4{flex: 1 1 calc(var(--col)*4); max-width: calc(var(--col)*4) ;min-width: 0;}
+        .col_s5{flex: 1 1 calc(var(--col)*5); max-width: calc(var(--col)*5) ;min-width: 0;}
+        .col_s6{flex: 1 1 calc(var(--col)*6); max-width: calc(var(--col)*6) ;min-width: 0;}
+        .col_s7{flex: 1 1 calc(var(--col)*7); max-width: calc(var(--col)*7) ;min-width: 0;}
+        .col_s8{flex: 1 1 calc(var(--col)*8); max-width: calc(var(--col)*8) ;min-width: 0;}
+        .col_s9{flex: 1 1 calc(var(--col)*9); max-width: calc(var(--col)*9) ;min-width: 0;}
+        .col_s10{flex: 1 1 calc(var(--col)*10); max-width: calc(var(--col)*10) ;min-width: 0;}
+        .col_s11{flex: 1 1 calc(var(--col)*11); max-width: calc(var(--col)*11) ;min-width: 0;}
+        .col_s12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0;}
+        .grid_s1 {grid-template-columns: repeat(1, 1fr);}
+        .grid_s2 {grid-template-columns: repeat(2, 1fr);}
+        .grid_s3 {grid-template-columns: repeat(3, 1fr);}
+        .grid_s4 {grid-template-columns: repeat(4, 1fr);}
+        .grid_s6 {grid-template-columns: repeat(6, 1fr);}
+      }
     </style>
   </head>
   <body>
-
     <!-- НАВИГАЦИЯ -->
     <header class="header no-print">
       <nav class="navbar" id="navbar" aria-label="Главная навигация">
@@ -87,7 +143,7 @@
         </div>
       </nav>
     </header>
-
+    <!-- КОНТЕНТ -->
     <main>
       <!-- 0. ЗАГОЛОВОК СТРАНИЦЫ (Page Header) -->
       <header class="page-header">
@@ -180,13 +236,21 @@
           <p class="kit-note">Секции чередуются по фону для визуального разделения. Заголовок секции — .section-header (eyebrow + H2 + описание).</p>
         </div>
       </section>
-<div class="container" style="display: block;"></div>
-        <!-- 4. СЕТКИ -->
-        <!-- <section class="kit-section">
+      <!-- 4. СЕТКИ -->
+      <section class="kit-section">
+        <div class="container" style="display: block;">
           <div class="kit-label">4. Сетки (grid)</div>
           <p class="kit-note">Базовый класс .grid + модификаторы количества колонок</p>
           <div class="kit-row">
-            <div class="grid grid_4" style="gap: 10px;">
+            <div class="grid grid_6 grid_md4 grid_sm2 grid_xs1" style="gap: 10px;">
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+              <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_6</div>
+            </div>
+            <div class="grid grid_4 grid_sm2 grid_xs1" style="gap: 10px;">
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_4</div>
@@ -194,51 +258,106 @@
             </div>
           </div>
           <div class="kit-row">
-            <div class="grid grid_3" style="gap: 10px;">
+            <div class="grid grid_3 grid_s2 grid_xs1" style="gap: 10px;">
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_3</div>
             </div>
           </div>
           <div class="kit-row">
-            <div class="grid grid_2" style="gap: 10px;">
+            <div class="grid grid_2 grid_xs1" style="gap: 10px;">
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_2</div>
               <div style="background: var(--bglight); padding: 20px; text-align: center;">grid_2</div>
             </div>
           </div>
           <p class="kit-note">Адаптивные модификаторы: grid_md2, grid_md1, grid_sm1, grid_s1</p>
-        </section> -->
-
-        <!-- 5. КАРТОЧКИ INFO-CARD -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">5. Карточки .info-card</div>
-          <div class="grid grid_4" style="gap: 20px;">
-            <div class="info-card">
-              <p class="card-number card-number_accent">01</p>
-              <h3 class="info-card_title">Обычная</h3>
-              <p class="info-card_text">Белый фон, рамка var(--border), hover-эффект.</p>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_12 col_md12" col_sm12 col_s12 style="background: var(--bglight)">col_1</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_1 col_md1 col_sm1 col_s1" style="background: var(--bglight)">col_1</div>
+            <div class="col_11 col_md11 col_sm11 col_s11" style="background: var(--bglight)">col_11</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_2 col_md2 col_sm2 col_s2" style="background: var(--bglight)">col_2</div>
+            <div class="col_10 col_md10 col_sm10 col_s10" style="background: var(--bglight)">col_10</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_3 col_md3 col_sm3 col_s3" style="background: var(--bglight)">col_3</div>
+            <div class="col_9 col_md9 col_sm9 col_s9" style="background: var(--bglight)">col_9</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_4 col_md4 col_sm4 col_s4" style="background: var(--bglight)">col_4</div>
+            <div class="col_8 col_md8 col_sm8 col_s8" style="background: var(--bglight)">col_8</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_5 col_md5 col_sm5 col_s5" style="background: var(--bglight)">col_5</div>
+            <div class="col_7 col_md7 col_sm7 col_s7" style="background: var(--bglight)">col_7</div>
+          </div>
+          <div class="kit-row" style="width: 100%;flex-wrap: nowrap; gap: 10px;">
+            <div class="col_6 col_md6 col_sm6 col_s6" style="background: var(--bglight)">col_6</div>
+            <div class="col_6 col_md6 col_sm6 col_s6" style="background: var(--bglight)">col_6</div>
+          </div>
+          <p class="kit-note">Адаптивные модификаторы: col_x, col_mdx, col_smx, col_sx</p>
+        </div>
+      </section>
+      <!-- 5. КАРТОЧКИ INFO-CARD -->
+      <section class="kit-section">
+        <div class="container" style="display: block;">
+          <div class="grid grid_3">
+            <div class="card">
+              <p class="card-number card-number_line">01</p>
+              <h3 class="card-title">Заголовок карточки</h3>
+              <p class="card-text">Белый фон, рамка var(--border), hover-эффект.</p>
+              <p class="card-text">Проектирование с учетом исходных данных, сценариев жизни и будущего строительства.</p>
+              <a href="#" class="card-link">Подробнее →</a>
             </div>
-            <div class="info-card info-card_gray">
-              <p class="card-number card-number_accent">02</p>
-              <h3 class="info-card_title">.info-card_gray</h3>
-              <p class="info-card_text">Фон var(--bglight).</p>
+            <div class="card card_gray">
+              <p class="card-number">02</p>
+              <h3 class="card-title">Заголовок карточки</h3>
+              <p class="card-text">Фон var(--bglight).</p>
+              <p class="card-text">Проектирование с учетом исходных данных, сценариев жизни и будущего строительства.</p>
             </div>
-            <div class="info-card info-card_accent">
-              <p class="card-number card-number_accent">03</p>
-              <h3 class="info-card_title">.info-card_accent</h3>
-              <p class="info-card_text">Фон #EBF5C7, рамка var(--accent).</p>
+            <div class="card card_accent">
+              <p class="card-number card-number_line">03</p>
+              <h3 class="card-title">Заголовок карточки</h3>
+              <p class="card-text">Фон var(--accent-light), рамка var(--accent).</p>
+              <p class="card-text">Проектирование с учетом исходных данных, сценариев жизни и будущего строительства.</p>
+              <a href="#" class="card-link">Подробнее →</a>
             </div>
-            <div class="info-card info-card_transparent">
-              <p class="card-number card-number_circle">04</p>
-              <hr class="process-line">
-              <h3 class="info-card_title">.info-card_transparent</h3>
-              <p class="info-card_text">Без фона и рамки. Для "Как это работает".</p>
+            <div class="card card_dark">
+              <p class="card-number">04</p>
+              <h3 class="card-title card-title_dark">Заголовок карточки</h3>
+              <p class="card-text card-text_dark">Фон var(--bgfooter), светлый текст.</p>
+            </div>
+            <div class="card card_transparent">
+              <p class="card-number card-number_circle">05</p>
+              <hr class="process_line">
+              <h3 class="card-title">Заголовок карточки</h3>
+              <p class="card-text">Без фона и рамки. Для "Как это работает".</p>
+            </div>
+            <div class="card">
+              <img src="/assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+              <h3 class="card-title">Дом 01</h3>
+              <div class="card_meta">
+                <span>96 м²</span>
+                <span>8×12 м</span>
+                <span>1 этаж</span>
+                <span>1 этаж</span>
+                <span>3 спальни</span>
+                <span>2 сан. узла</span>
+              </div>
+              <div class="card_price">
+                <span class="">от 29 000 ₽</span>
+                <a href="#" class="card-link">Подробнее →</a>
+              </div>
             </div>
           </div>
-        </section> -->
-
-        <!-- 6. НОМЕРА КАРТОЧЕК -->
-        <!-- <section class="kit-section">
+        </div>
+      </section>
+      <!-- 6. НОМЕРА КАРТОЧЕК -->
+      <!-- <section class="kit-section">
+        <div class="container" style="display: block;">
           <div class="kit-label">6. Номера карточек</div>
           <div class="kit-row">
             <p class="card-number">01 — .card-number (базовый)</p>
@@ -249,83 +368,33 @@
             <hr class="process-line" style="width: 200px;">
             <span class="kit-note">.process-line — линия под круглым номером</span>
           </div>
-        </section> -->
+        </div>
+      </section> -->
 
-        <!-- 7. КАРТОЧКА ПРОЕКТА -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">7. Карточка проекта .project-card</div>
-          <div class="grid grid_3" style="gap: 20px;">
-            <div class="project-card">
-              <img src="assets/img/projects/house-01.jpg" alt="Дом 01" class="project-card_img">
-              <div class="project-card_content">
-                <h3 class="info-card_title">Дом 01</h3>
-                <div class="project-card_meta">
-                  <span>96 м²</span>
-                  <span>8×12 м</span>
-                  <span>1 этаж</span>
-                </div>
-                <div class="project-card_footer">
-                  <span class="project-card_price">от 29 000 ₽</span>
-                  <a href="#" class="project-card_link">Подробнее →</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card">
-              <img src="assets/img/projects/house-02.jpg" alt="Дом 02" class="project-card_img">
-              <div class="project-card_content">
-                <h3 class="info-card_title">Дом 02</h3>
-                <div class="project-card_meta">
-                  <span>120 м²</span>
-                  <span>10×12 м</span>
-                  <span>2 этажа</span>
-                </div>
-                <div class="project-card_footer">
-                  <span class="project-card_price">от 39 000 ₽</span>
-                  <a href="#" class="project-card_link">Подробнее →</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card">
-              <img src="assets/img/projects/house-03.jpg" alt="Дом 03" class="project-card_img">
-              <div class="project-card_content">
-                <h3 class="info-card_title">Дом 03 — длинное название в две строки для теста</h3>
-                <div class="project-card_meta">
-                  <span>84 м²</span>
-                  <span>7×12 м</span>
-                  <span>1 этаж</span>
-                </div>
-                <div class="project-card_footer">
-                  <span class="project-card_price">от 25 000 ₽</span>
-                  <a href="#" class="project-card_link">Подробнее →</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="kit-note">Третья карточка — тест выравнивания footer при разном количестве строк в заголовке.</p>
-        </section> -->
-
+      <div class="container" style="display: block;">
+        
         <!-- 8. STAT-CARD -->
-        <!-- <section class="kit-section">
+        <section class="kit-section">
           <div class="kit-label">8. Карточка статистики .stat-card</div>
-          <div class="grid grid_4" style="gap: 20px;">
-            <div class="info-card stat-card">
-              <div class="stat-card_number">100+</div>
-              <div class="stat-card_label">проектов под ключ</div>
+          <div class="grid grid_4 grid_sm2 grid_xs1" style="gap: 20px;">
+            <div class="card stat-card">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">проектов под ключ</div>
             </div>
-            <div class="info-card stat-card">
-              <div class="stat-card_number">20 лет</div>
-              <div class="stat-card_label">опыта работы</div>
+            <div class="card stat-card">
+              <div class="stat-number">20 лет</div>
+              <div class="stat-label">опыта работы</div>
             </div>
-            <div class="info-card stat-card">
-              <div class="stat-card_number">100+</div>
-              <div class="stat-card_label">довольных клиентов</div>
+            <div class="card stat-card">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">довольных клиентов</div>
             </div>
-            <div class="info-card stat-card">
-              <div class="stat-card_number">24/7</div>
-              <div class="stat-card_label">поддержка</div>
+            <div class="card stat-card card_accent">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">поддержка</div>
             </div>
           </div>
-        </section> -->
+        </section>
 
         <!-- 9. ФОРМЫ -->
         <!-- <section class="kit-section">
@@ -383,34 +452,8 @@
           </div>
         </section> -->
 
-        <!-- 11. BREADCRUMBS -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">11. Хлебные крошки</div>
-          <nav class="breadcrumbs">
-            <a href="index.html">Главная</a>
-            <span class="separator">/</span>
-            <a href="#">Проектирование</a>
-            <span class="separator">/</span>
-            <span class="current">Бриф на проектирование</span>
-          </nav>
-        </section> -->
-
-        <!-- 12. PAGE HEADER -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">12. Шапка страницы (.page-header)</div>
-          <header class="page-header" style="padding: 20px;">
-            <nav class="breadcrumbs">
-              <a href="index.html">Главная</a>
-              <span class="separator">/</span>
-              <span class="current">Обо мне</span>
-            </nav>
-            <h1 class="page-title">Инженерный подход к проектированию</h1>
-            <p>Личный бренд инженера-проектировщика: готовые проекты, индивидуальная работа и BIM.</p>
-          </header>
-        </section> -->
-
         <!-- 13. ABOUT INTRO -->
-        <!-- <section class="kit-section">
+        <section class="kit-section">
           <div class="kit-label">13. Блок "Обо мне" (.about-intro)</div>
           <div class="grid grid_2 about-intro">
             <div class="about-text">
@@ -423,15 +466,15 @@
             </div>
           </div>
           <p class="kit-note">На десктопе фото слева (order: 1), текст справа. На мобильном — текст сверху, фото снизу.</p>
-        </section> -->
+        </section>
 
         <!-- 14. ОТЗЫВ -->
         <!-- <section class="kit-section">
           <div class="kit-label">14. Карточка отзыва</div>
-          <div class="info-card" style="max-width: 500px;">
+          <div class="card" style="max-width: 500px;">
             <p class="quote-mark">"</p>
-            <p class="info-card_text">Здесь размещается реальный отзыв клиента о качестве проекта, понятности документации и процессе работы.</p>
-            <div class="stat-card_label" style="margin-top: auto; font-weight: 500;">Имя клиента • название проекта</div>
+            <p class="card-text">Здесь размещается реальный отзыв клиента о качестве проекта, понятности документации и процессе работы.</p>
+            <div class="card-label" style="margin-top: auto; font-weight: 500;">Имя клиента • название проекта</div>
           </div>
         </section> -->
 
@@ -450,9 +493,9 @@
         </section> -->
 
         <!-- 16. ЦВЕТА ДИЗАЙН-СИСТЕМЫ -->
-        <!-- <section class="kit-section">
+        <section class="kit-section">
           <div class="kit-label">16. Цвета дизайн-системы</div>
-          <div class="kit-row">
+          <div class="grid grid_11">
             <div style="width: 80px; height: 80px; background: var(--accent); border-radius: 8px;"></div>
             <div style="width: 80px; height: 80px; background: var(--btnhover); border-radius: 8px;"></div>
             <div style="width: 80px; height: 80px; background: var(--hover); border-radius: 8px;"></div>
@@ -464,12 +507,20 @@
             <div style="width: 80px; height: 80px; background: var(--footertext); border-radius: 8px;"></div>
             <div style="width: 80px; height: 80px; background: #EBF5C7; border: 1px solid var(--border); border-radius: 8px;"></div>
             <div style="width: 80px; height: 80px; background: #0088cc; border-radius: 8px;"></div>
-          </div>
-          <div class="kit-row" style="font-size: 12px; color: var(--secondary);">
-            <span>accent</span><span>btnhover</span><span>hover</span><span>text</span><span>secondary</span><span>border</span><span>bglight</span><span>bgfooter</span><span>footertext</span><span>#EBF5C7 (accent-light)</span><span>#0088cc (telegram)</span>
-          </div>
-        </section> -->
 
+            <div><span>accent</span></div>
+            <div><span>btnhover</span></div>
+            <div><span>hover</span></div>
+            <div><span>text</span></div>
+            <div><span>secondary</span></div>
+            <div><span>border</span></div>
+            <div><span>bglight</span></div>
+            <div><span>bgfooter</span></div>
+            <div><span>footertext</span></div>
+            <div><span>#EBF5C7 (accent-light)</span></div>
+            <div><span>#0088cc (telegram)</span></div>
+          </div>
+        </section>
       </div>
     </main>
 

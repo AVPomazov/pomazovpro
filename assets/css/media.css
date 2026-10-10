@@ -21,7 +21,7 @@
 .grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: var(--gutter);
   width: 100%;
 	/*border: solid 1px green; /* для отладки */
 }
@@ -30,6 +30,7 @@
 .grid_3 {grid-template-columns: repeat(3, 1fr);}
 .grid_4 {grid-template-columns: repeat(4, 1fr);}
 .grid_6 {grid-template-columns: repeat(6, 1fr);}
+.grid_11 {grid-template-columns: repeat(11, 1fr);}
 
 /* БУРГЕР-МЕНЮ (Мобильная навигация) */
 .burger {
@@ -118,6 +119,7 @@
     padding-left: 16px;
   }
   .navbar_menu ul li a::after {display: none;}
+  .navbar_menu ul li.has_submenu > a::before {content: "";}
   .navbar_menu ul li.has_submenu > ul {
     position: static;
     opacity: 1;
@@ -144,7 +146,7 @@
   .navbar_actions {display: none;}
   .navbar_menu_mobile_cta{display: flex;justify-content: center;}
   /* Стилизуем скроллбар (опционально, для красоты) */
-  .navbar_menu::-webkit-scrollbar {width: 6px;}
+  .navbar_menu::-webkit-scrollbar {width: 7px;}
   .navbar_menu::-webkit-scrollbar-track {background: var(--bglight);}
   .navbar_menu::-webkit-scrollbar-thumb {
     background: var(--border);
