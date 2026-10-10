@@ -22,6 +22,7 @@
   --flabel: #616b75;
   --ferror: #db2e2e;
   --telegram: #0088cc;
+  --bgpage: #FAFAF9;
 
   /* === ОТСТУПЫ И СЕТКА === */
   --col: calc(100%/12);
@@ -41,11 +42,14 @@
   --radius-sm: 2px; /* burger span */
   --radius-md: 8px; /* мелкие элементы */
   --radius-base: 12px; /* основной: кнопки, карточки, инпуты, картинки */
+  --radius-dropdown: 14px;   /* выпадающее меню, фильтры */
   --radius-lg: 16px; /* крупные обёртки (CTA форма) */
+  --radius-card-lg: 18px;    /* advantage card, карточка статьи */
+  --radius-round: 22px;      /* slider arrow (44×44 круг) */
   --radius-full: 9999px; /* круглые/пилюли (FAB, фильтры, бейджи) */
 }
 /* --- Reset (сброс стилей браузера) --- */
-*,*::before,*::after {box-sizing: inherit; /*margin: 0;	padding: 0;*/}
+*,*::before,*::after {box-sizing: inherit; margin: 0;	padding: 0;}
 html {
   box-sizing: border-box;
   height: 100%;
@@ -96,6 +100,14 @@ p {
   font-size: 16px;
   color: var(--text);
   margin-bottom: 16px;
+  line-height: 1.6;
+}
+.eyebrow {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
 }
 /* Ссылки */
 a {
@@ -105,7 +117,7 @@ a {
 }
 a:hover {color: var(--hover);}
 /* Списки */
-ul,ol {margin-bottom: 16px; padding-left: 24px;}
+/* ul,ol {margin-bottom: 16px; padding-left: 24px;} */
 li {margin-bottom: 8px;}
 /* Изображения */
 img {
@@ -160,6 +172,7 @@ img {
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
+  margin: 0;
   /* border-bottom: 1px solid var(--border); */
   /* justify-content: space-between; */
   width: 100%;
@@ -277,4 +290,136 @@ img {
   flex-shrink: 0;
   min-width: 192px;
   justify-content: flex-end;
+}
+/* === ЗАГОЛОВОК СТРАНИЦЫ === */
+.page-header .container {flex-direction: column;}
+.page-header {
+  background: var(--bglight);
+  padding: 20px 0 30px;
+  margin-bottom: 40px;
+}
+ .breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.breadcrumbs a:hover {color: var(--accent);}
+.breadcrumbs .separator {color: var(--border); margin: 0 4px;}
+.breadcrumbs .current {color: var(--text); font-weight: 500;}
+.page-title {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+}
+.page-description {
+  font-size: 16px;
+  color: var(--secondary);
+  max-width: 600px;
+  margin: 0;
+}
+/* === ФУТЕР === */
+.footer {
+  background-color: var(--bgfooter);
+  color: var(--footertext);
+  padding: 20px 0;
+}
+.footer_top {
+  display: flex;
+}
+.footer_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  width: 100%;
+  height:auto;
+  border-top: 1px solid var(--footer-border);
+  padding-top: 10px;
+}
+.footer-copy{
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+}
+.footer_copy {
+  margin: 0;
+  color: var(--footer-muted);  
+  font-size: 12px;
+}
+.footer_docs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer_docs a {
+  color: var(--footertext);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer_docs a:hover {color: var(--white);}
+.footer_docs span {color: var(--footer-border);}
+/* === КНОПКА "НАВЕРХ" === */
+.scroll-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 90;
+  text-decoration: none;
+}
+.scroll-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-to-top:hover {
+  background: var(--btnhover);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.fab-telegram {
+  position: fixed;
+  right: 24px;
+  bottom: 88px; /* Выше кнопки "Наверх" */
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--telegram);
+  color: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+  transition: all 0.3s ease;
+  z-index: 90;
+  text-decoration: none;
+}
+.fab-telegram:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 136, 204, 0.5);
 }

@@ -63,7 +63,12 @@
   text-align: center;
   display: none;
 }
-button_cat{width: 80%; max-width: 300px;}
+/* .button_cat{width: 80%; max-width: 300px;} */
+/* .navbar_menu_mobile_cta .button {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto; /* Чтобы встала по центру *//*
+} */
 
 /* (xl) >1280px: десктопы */
 @media (max-width: 1280px) {
@@ -80,13 +85,16 @@ button_cat{width: 80%; max-width: 300px;}
     left: 0;
     width: 100%;
     height: calc(100vh - clamp(70px, 7vw, 92px)); /* Высота экрана минус высота шапки */
+    max-height: calc(100vh - clamp(70px, 7vw, 92px));
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    overflow-x: hidden; /* Запрещаем горизонтальную */
     background-color: var(--white);
     /* backdrop-filter: blur(10px); ПОИГРАЙ С ЭТИМ: раскомментируй для эффекта матового стекла (требует полупрозрачного фона) */
     border-top: 1px solid var(--border);    
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;    
+    padding: 40px 0;    
     /* Скрываем с анимацией */
     opacity: 0;
     visibility: hidden;
@@ -141,6 +149,30 @@ button_cat{width: 80%; max-width: 300px;}
   }
   .navbar_actions {display: none;}
   .navbar_menu_mobile_cta{display: flex;justify-content: center;}
+  /* Стилизуем скроллбар (опционально, для красоты) */
+  .navbar_menu::-webkit-scrollbar {width: 6px;}
+  .navbar_menu::-webkit-scrollbar-track {background: var(--bglight);}
+  .navbar_menu::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .navbar_menu::-webkit-scrollbar-thumb:hover {background: var(--secondary);}
+  .footer_bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .scroll-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  .fab-telegram {
+    right: 16px;
+    bottom: 80px;
+    width: 40px;
+    height: 40px;
+  }
 } 
 /* (s) (опционально) */
 @media (max-width: 480px) {

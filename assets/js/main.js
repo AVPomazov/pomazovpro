@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
       }
     });
-
     // Закрываем меню при клике на любую ссылку внутри него
     menuLinks.forEach(link => {
       link.addEventListener('click', function() {
@@ -39,22 +38,40 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 	
 	// Кнопка "Наверх"
-	const scrollBtn = document.querySelector('.scroll-to-top');
-  if (scrollBtn) {
-    const SHOW_AFTER = 400; // px прокрутки до появления
+	// const scrollBtn = document.querySelector('.scroll-to-top');
+  // if (scrollBtn) {
+  //   const SHOW_AFTER = 400; // px прокрутки до появления
 
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > SHOW_AFTER) {
-        scrollBtn.classList.add('is-visible');
-      } else {
-        scrollBtn.classList.remove('is-visible');
-      }
-    });
-    
+  //   window.addEventListener('scroll', function() {
+  //     if (window.scrollY > SHOW_AFTER) {
+  //       scrollBtn.classList.add('is-visible');
+  //     } else {
+  //       scrollBtn.classList.remove('is-visible');
+  //     }
+  //   });    
+  //   // Плавный скролл наверх при клике
+  //   scrollBtn.addEventListener('click', function(e) {
+  //     e.preventDefault();
+  //     window.scrollTo({ top: 0, behavior: 'smooth' });
+  //   });
+  // }
+  (function() {
+		const scrollBtn = document.querySelector('.scroll-to-top');
+		if (!scrollBtn) return;
+
+		const SHOW_AFTER = 400; // px прокрутки до появления
+
+		window.addEventListener('scroll', function() {
+			if (window.scrollY > SHOW_AFTER) {
+				scrollBtn.classList.add('is-visible');
+			} else {
+				scrollBtn.classList.remove('is-visible');
+			}
+		});
     // Плавный скролл наверх при клике
     scrollBtn.addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
+	});
 });
