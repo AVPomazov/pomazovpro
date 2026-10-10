@@ -64,12 +64,6 @@
   display: none;
   font-size: 18px;
 }
-/* .button_cat{width: 80%; max-width: 300px;} */
-/* .navbar_menu_mobile_cta .button {
-  width: 80%;
-  max-width: 300px;
-  margin: 0 auto; /* Чтобы встала по центру *//*
-} */
 
 /* (xl) >1280px: десктопы */
 @media (max-width: 1280px) {
@@ -90,6 +84,8 @@
     overflow-x: hidden;
     background-color: var(--white);
     border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
