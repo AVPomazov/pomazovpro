@@ -89,24 +89,23 @@
     </header>
 
     <main>
-      <!-- 1. ЗАГОЛОВОК СТРАНИЦЫ (Page Header) -->
-       <header class="page-header">
+      <!-- 0. ЗАГОЛОВОК СТРАНИЦЫ (Page Header) -->
+      <header class="page-header">
 				<div class="container">
-          <div class="kit-label">0. Заголовок страницы (.page-header)</div>
+          <!-- <div class="kit-label">0. Заголовок страницы (.page-header)</div> -->
 					<nav class="breadcrumbs">
             <a href="index.html">Главная</a><span class="separator">/</span>
             <a href="#">Проектирование</a><span class="separator">/</span>
             <span class="current">BIM-проектирование</span>
           </nav>
-          <p class="eyebrow">eyebrow</p>
+          <p class="page-eyebrow">eyebrow</p>
 					<h1 class="page-title">Заголовок страницы (.page-header)</h1>
           <p class="page-description">Разработка проектной документации с учетом ваших пожеланий и требований.</p>
 				</div>
 			</header>
-
       <!-- 1. ТИПОГРАФИКА -->
       <section>
-        <div class="container">
+        <div class="container" style="display: block;">
           <div class="kit-label">1. Типографика</div>
           <div>
             <h1>Заголовок H1 — 36px, 900</h1>
@@ -131,34 +130,57 @@
           </div>
         </div>
       </section>
-
-      <div class="container" style="display: block;">
-        
-
-        <!-- 2. КНОПКИ -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">2. Кнопки</div>
-          <div class="kit-row">
-            <a href="#" class="button">Primary</a>
-            <a href="#" class="button button-secondary">Secondary</a>
-            <a href="#" class="button button-large">Large Primary</a>
-            <a href="#" class="button button-filter">Filter</a>
-            <a href="#" class="button button-secondary button-filter">Filter Secondary</a>
-          </div>
-          <p class="kit-note">Состояния: default, :hover (btnhover), :active (translateY 0)</p>
-        </section> -->
-
-        <!-- 3. СЕКЦИИ -->
-        <!-- <section class="kit-section">
-          <div class="kit-label">3. Секции (фон)</div>
-          <div class="section section-white" style="padding: 30px; border: 1px dashed var(--border);">
-            <p>.section-white — фон var(--white)</p>
-          </div>
-          <div class="section section-gray" style="padding: 30px; border: 1px dashed var(--border);">
-            <p>.section-gray — фон var(--bglight)</p>
-          </div>
-        </section> -->
-
+      <!-- 2. КНОПКИ -->
+      <!-- <section class="kit-section">
+        <div class="kit-label">2. Кнопки</div>
+        <div class="kit-row">
+          <a href="#" class="button">Primary</a>
+          <a href="#" class="button button-secondary">Secondary</a>
+          <a href="#" class="button button-large">Large Primary</a>
+          <a href="#" class="button button-filter">Filter</a>
+          <a href="#" class="button button-secondary button-filter">Filter Secondary</a>
+        </div>
+        <p class="kit-note">Состояния: default, :hover (btnhover), :active (translateY 0)</p>
+      </section> -->
+      <!-- 3. СЕКЦИИ -->
+      <section>
+        <div class="container" style="display: block;">
+          <div class="kit-label">3. Секции (фоны и заголовки)</div>
+          <!-- Секция с белым фоном -->
+          <div class="section section_white" style="border: 1px dashed var(--border);">
+            <div class="container" style="display: block;">
+              <div class="section-header">
+                <p class="eyebrow">Популярные проекты</p>
+                <h2>Готовые проекты домов</h2>
+                <p>Каркасные дома с понятной документацией. Выбирайте проект и заказывайте адаптацию под ваш участок.</p>
+              </div>
+              <p>Контент секции (сетка карточек, текст, форма и т.д.)</p>
+            </div>
+          </div>          
+          <!-- Секция с серым фоном -->
+          <div class="section section_gray" style="border: 1px dashed var(--border); margin-top: 20px;">
+            <div class="container" style="display: block;">
+              <div class="section-header">
+                <h2>Почему со мной удобно работать</h2>
+                <p>Инженерный подход к каждому проекту. Без скрытых платежей и сюрпризов.</p>
+              </div>
+              <p>Контент секции (преимущества, отзывы, статистика)</p>
+            </div>
+          </div>          
+          <!-- Секция с акцентным фоном -->
+          <div class="section section_accent" style="border: 1px dashed var(--border); margin-top: 20px;">
+            <div class="container" style="display: block;">
+              <div class="section-header">
+                <h2>Готовы начать проект?</h2>
+                <p>Оставьте заявку — я свяжусь с вами в течение дня и обсудим детали.</p>
+              </div>
+              <p>Контент секции (форма обратной связи, CTA-кнопка)</p>
+            </div>
+          </div>          
+          <p class="kit-note">Секции чередуются по фону для визуального разделения. Заголовок секции — .section-header (eyebrow + H2 + описание).</p>
+        </div>
+      </section>
+<div class="container" style="display: block;"></div>
         <!-- 4. СЕТКИ -->
         <!-- <section class="kit-section">
           <div class="kit-label">4. Сетки (grid)</div>

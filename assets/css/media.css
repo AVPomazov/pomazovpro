@@ -80,26 +80,23 @@
 @media (max-width: 768px) {
   .burger {display: flex;}
   .navbar_menu {
-    position: fixed; /* Фиксируем относительно окна браузера */
-    top: clamp(70px, 7vw, 92px); /* ПОИГРАЙ С ЭТИМ: должно совпадать с высотой .navbar */
+    position: fixed;
+    top: clamp(70px, 7vw, 92px);
     left: 0;
     width: 100%;
-    height: calc(100vh - clamp(70px, 7vw, 92px)); /* Высота экрана минус высота шапки */
     max-height: calc(100vh - clamp(70px, 7vw, 92px));
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    overflow-x: hidden; /* Запрещаем горизонтальную */
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: var(--white);
-    /* backdrop-filter: blur(10px); ПОИГРАЙ С ЭТИМ: раскомментируй для эффекта матового стекла (требует полупрозрачного фона) */
-    border-top: 1px solid var(--border);    
+    border-top: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;    
-    /* Скрываем с анимацией */
+    padding: 40px 0 60px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px); /* Слегка сдвинуто вверх */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* ПОИГРАЙ С ЭТИМ: плавность появления (cubic-bezier делает её "дорогой") */
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
   }
   .navbar_menu ul {
@@ -173,6 +170,7 @@
     width: 40px;
     height: 40px;
   }
+  .section {padding: 40px 0;}
 } 
 /* (s) (опционально) */
 @media (max-width: 480px) {

@@ -117,7 +117,7 @@ a {
 }
 a:hover {color: var(--hover);}
 /* Списки */
-/* ul,ol {margin-bottom: 16px; padding-left: 24px;} */
+ul,ol {margin-bottom: 16px; padding-left: 24px;}
 li {margin-bottom: 8px;}
 /* Изображения */
 img {
@@ -295,7 +295,7 @@ img {
 .page-header .container {flex-direction: column;}
 .page-header {
   background: var(--bglight);
-  padding: 20px 0 30px;
+  padding: 40px 0 20px;
   margin-bottom: 40px;
 }
  .breadcrumbs {
@@ -315,6 +315,14 @@ img {
 .breadcrumbs a:hover {color: var(--accent);}
 .breadcrumbs .separator {color: var(--border); margin: 0 4px;}
 .breadcrumbs .current {color: var(--text); font-weight: 500;}
+.page-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
 .page-title {
   font-size: 36px;
   font-weight: 900;
@@ -370,6 +378,13 @@ img {
 }
 .footer_docs a:hover {color: var(--white);}
 .footer_docs span {color: var(--footer-border);}
+/* === СЕКЦИИ === */
+.section {padding: 60px 0; width: 100%;}
+.section_white {background: var(--white);}
+.section_gray {background: var(--bglight);}
+.section_accent {background: var(--accent-light);}
+.section-header {margin-bottom: 40px;}
+
 /* === КНОПКА "НАВЕРХ" === */
 .scroll-to-top {
   position: fixed;
