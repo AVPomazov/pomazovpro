@@ -62,6 +62,7 @@
   width: 100%;
   text-align: center;
   display: none;
+  font-size: 18px;
 }
 /* .button_cat{width: 80%; max-width: 300px;} */
 /* .navbar_menu_mobile_cta .button {
@@ -115,7 +116,7 @@
     padding: 0;
   }
   .navbar_menu ul li a {
-    font-size: 16px; /* ПОИГРАЙ С ЭТИМ: размер шрифта в мобильном меню */
+    font-size: 18px; /* ПОИГРАЙ С ЭТИМ: размер шрифта в мобильном меню */
     padding: 16px 0;
     border-bottom: 1px solid var(--bglight); /* ПОИГРАЙ С ЭТИМ: разделители между пунктами */
     padding-left: 16px;
@@ -133,7 +134,7 @@
     margin-top: -10px; /* Чуть подтягиваем к родителю */
   }
   .navbar_menu ul li.has_submenu > ul li a {
-    font-size: 16px;
+    font-size: 18px;
     padding: 12px 0;
     color: var(--secondary);
   }

@@ -157,7 +157,7 @@ img {
   align-items: center;
   flex-shrink: 0;
 }
-.navbar_logo img {height: clamp(25px, 3vw, 40px);}
+.navbar_logo img {height: clamp(30px, 3vw, 45px);}
 /* Меню сайта */
 .navbar_menu {
   display: flex;
