@@ -180,5 +180,5 @@
 } 
 /* (s) (опционально) */
 @media (max-width: 480px) {
-  .grid_s1 {grid-template-columns: repeat(3, 1fr);}
+  .grid_s1 {grid-template-columns: repeat(1, 1fr);}
 }
