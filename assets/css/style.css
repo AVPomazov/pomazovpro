@@ -78,7 +78,7 @@ body::before {
   height: 0;
   visibility: hidden;
 }
-header,nav,main,footer {width: 100%;}
+header, nav, main, footer {width: 100%;}
 main {
   flex-grow: 1; /* растягиваем вертикально */
   min-height: 0;
@@ -180,7 +180,7 @@ img {
   /* justify-content: space-between; */
   width: 100%;
 }
-.navbar_menu ul li {margin: 0;padding-right: 40px;}
+.navbar_menu ul li {margin: 0;padding-right: clamp(20px, 2vw, 40px);}
 .navbar_menu ul li a {
   color: var(--text);
   text-decoration: none;
@@ -434,7 +434,6 @@ img {
   color: var(--text);
   line-height: 1.3;
 }
-.card-text_dark{color: var(--footer-muted);}
 /* Ссылка CTA */
 .card-link {
   display: inline-block;

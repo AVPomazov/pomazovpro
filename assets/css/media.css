@@ -23,7 +23,7 @@
   grid-template-columns: 1fr;
   gap: var(--gutter);
   width: 100%;
-	/*border: solid 1px green; /* для отладки */
+	/*border: solid 1px green; */
 }
 .grid_1 {grid-template-columns: repeat(1, 1fr);}
 .grid_2 {grid-template-columns: repeat(2, 1fr);}
@@ -81,6 +81,7 @@
 @media (max-width: 768px) {
   .grid_sm1 {grid-template-columns: repeat(1, 1fr);}
   .grid_sm2 {grid-template-columns: repeat(2, 1fr);}
+  .grid_sm3 {grid-template-columns: repeat(3, 1fr);}
   .burger {display: flex;}
   .navbar_menu {
     position: fixed;
