@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>"pomazov.pro" - UI Kit - Формы (Отладка)</title>
+	<meta name="DESCRIPTION" content=""/>
+	<meta name="KEYWORDS" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/><!--Let browser know website is optimized for mobile-->	
+	<!-- FAVICONS -->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/icons/favicon_180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/img/common/icons/favicon_192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="assets/img/common/icons/favicon_512x512.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/common/icons/favicon_96x96.png">
+	<link rel="shortcut icon" href="assets/img/common/icons/favicon.ico">
+	<!-- СТИЛИ (порядок важен!) -->
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/fonts.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!--<link rel="stylesheet" href="assets/css/slider.css">-->
+	<link rel="stylesheet" href="assets/css/form.css">
+	<link rel="stylesheet" href="assets/css/brief.css">
+	<link rel="stylesheet" href="assets/css/media.css">
+</head>
+<!--
+body
+├── nav (копируем из index.html)
+├── main
+│   ├── section "Поля ввода"
+│   │   ├── text, email, tel, url, number, password
+│   │   ├── состояния: default, focus, filled, error, disabled
+│   ├── section "Textarea"
+│   ├── section "Select"
+│   ├── section "Radio"
+│   │   ├── обычные (.form-radio)
+│   │   ├── в карточках (.icon-card)
+│   ├── section "Checkbox"
+│   │   ├── обычные (.form-checkbox)
+│   │   ├── в карточках (.icon-card)
+│   │   ├── согласие (.form-checkbox-consent)
+│   ├── section "File"
+│   ├── section "Кнопки"
+│   │   ├── primary, secondary, disabled
+│   ├── section "Сетки"
+│   │   ├── .grid (auto)
+│   │   ├── .grid-2, .grid-3, .grid-4
+│   │   ├── .grid-cards
+│   │   ├── .checkbox-field-row (чекбокс + поле)
+│   └── section "Паттерны"
+│       ├── чекбокс → показать поле
+│       ├── карточки с иконками (radio)
+│       ├── карточки с иконками (checkbox)
+└── footer 
+	-->
+<body>
+	<nav id="navbar" class="site-nav">
+		<div class="container">
+			<a href="index.html" class="nav_logo col_2 col_md_3">
+				<img src="assets/img/common/imglogo234x50.png" alt="POMAZOV.PRO">
+			</a>
+			<div class="nav_menu col_10">
+				<ul>
+					<li class="has_submenu">
+						<a href="#">Проекты</a>
+						<ul>
+							<li><a href="index.html">Дома</a></li>
+							<li><a href="index.html">Хозблоки</a></li>
+							<li><a href="index.html">Беседки</a></li>
+						</ul>
+					</li>
+					<li class="has_submenu">
+						<a href="index.html">Проектирование</a>
+						<ul>
+							<li><a href="brief.html">Бриф на проектирование</a></li>
+						</ul>
+					</li>
+					<li class="has_submenu">
+						<a href="#">Полезности</a>
+						<ul>
+							<li><a href="index.html">Статьи</a></li>
+							<li><a href="index.html">Блог</a></li>
+						</ul>
+					</li>
+					<li><a href="index.html">Оплата и доставка</a></li>
+					<li><a href="index.html">О нас</a></li>
+				</ul>
+				<!-- Кнопка CTA -->
+				<div class="nav_menu_cta">
+					<a href="#order" class="button">Хочу проект</a>
+				</div>
+			</div>
+			<!--<div class="nav_cta col_2">
+				<a href="#order" class="button">Хочу проект</a>
+			</div>-->
+			<button type="button" class="burger" id="burger" aria-label="Открыть меню">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+	</nav>
+	
+	<main>
+		
+		<header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a>
+          <span class="separator">/</span>
+          <span class="current">Forms / UI states</span>
+        </nav>
+        <h1 class="page-title">Forms / UI states</h1>
+      </div>
+    </header>
+		
+		<section>
+			<div class="container">
+				<form class="classname" id="idName" action="" enctype="multipart/form-data" method="post" name="formname" target="_self">
+
+					<!-- 1. ПОЛЯ ВВОДА (INPUTS) -->
+					<fieldset class="playground-fieldset">
+						<legend>1. ПОЛЯ ВВОДА (INPUTS)</legend>
+
+						<h3>Разные типы полей</h3>
+						<div class="form-group">
+							<input type="text" class="form-input" placeholder="текст">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-input" placeholder="mail">
+						</div>
+						<div class="form-group">
+							<input type="file" class="form-input">
+						</div>
+						<div class="form-group">
+							<input type="number" class="form-input" placeholder="number">
+						</div>
+						<div class="form-group">
+							<input type="range" class="form-input">
+						</div>
+						<div class="form-group">
+							<input type="search" class="form-input" placeholder="search">
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-input" placeholder="tel">
+						</div>
+						<div class="form-group">
+							<input type="time" class="form-input">
+						</div>
+						<div class="form-group">
+							<input type="date" class="form-input">
+						</div>
+
+						<h3 style="margin-top: 30px;">Состояния полей</h3>
+
+						<!-- Обычное поле -->
+						<div class="form-group">
+							<label for="user-email">Ваша почта</label>
+							<input type="email" id="user-email" class="form-input" placeholder="example@mail.ru">
+							<span class="hint">формат: example@mail.ru</span>
+						</div>
+
+						<!-- Поле с ошибкой -->
+						<div class="form-group">
+							<label for="user-phone">Телефон</label>
+							<input type="tel" id="user-phone" class="form-input has-error" value="+7 999">
+							<span class="hint hint-error">Неверный формат номера</span>
+						</div>
+
+						<!-- Выпадающий список -->
+						<div class="form-group">
+							<label for="building-type">Тип постройки</label>
+							<select id="building-type" class="form-select">
+								<option value="" disabled selected>Выберите из списка</option>
+								<option value="house">Жилой дом</option>
+								<option value="bath">Баня</option>
+							</select>
+						</div>
+
+						<!-- Многострочное поле -->
+						<div class="form-group">
+							<label for="comments">Комментарий</label>
+							<textarea id="comments" class="form-textarea" placeholder="Опишите ваши пожелания..."></textarea>
+						</div>
+					</fieldset>
+
+					<!-- 2. TEXTAREA & SELECT -->
+					<fieldset class="playground-fieldset">
+						<legend>2. TEXTAREA & SELECT</legend>
+						<p>См. раздел 1 — поля уже показаны выше</p>
+					</fieldset>
+
+					<!-- 3. CHECKBOX & RADIO -->
+					<fieldset class="playground-fieldset">
+						<legend>3. ЧЕКБОКСЫ И РАДИО-КНОПКИ</legend>
+
+						<h3>Checkbox group</h3>
+						<div class="form-checkbox-group">
+							<label class="form-checkbox">
+								<input type="checkbox" name="test1">
+								<span>Концепция</span>
+							</label>
+							<label class="form-checkbox">
+								<input type="checkbox" name="test1" checked>
+								<span>Эскиз (выбран)</span>
+							</label>
+							<label class="form-checkbox">
+								<input type="checkbox" name="test1">
+								<span>Проект</span>
+							</label>
+						</div>
+
+						<h3>Radio group</h3>
+						<div class="form-radio-group">
+							<label class="form-radio">
+								<input type="radio" name="usage">
+								<span>Постоянное проживание</span>
+							</label>
+							<label class="form-radio">
+								<input type="radio" name="usage" checked>
+								<span>Сезонное (выбрано)</span>
+							</label>
+						</div>
+
+						<h3>Switch (Телефон / Telegram)</h3>
+						<div class="form-switch-group">
+							<div class="form-switch">
+								<input type="radio" name="contact" id="sw-phone" checked>
+								<label for="sw-phone">Телефон</label>
+							</div>
+							<div class="form-switch">
+								<input type="radio" name="contact" id="sw-tg">
+								<label for="sw-tg">Telegram</label>
+							</div>
+						</div>
+
+						<h3>Checkbox consent (15px)</h3>
+						<div class="form-checkbox-consent">
+							<input type="checkbox" id="consent-test">
+							<label for="consent-test">Согласен на обработку персональных данных</label>
+						</div>
+					</fieldset>
+
+					<!-- 4. FILE UPLOAD -->
+					<fieldset class="playground-fieldset">
+						<legend>4. FILE UPLOAD</legend>
+
+						<div class="form-group">
+							<label class="form-file">
+								<input type="file" multiple id="file-upload-test">
+								<span class="file-label">Выберите файл(ы)</span>
+							</label>
+						</div>
+					</fieldset>
+
+					<!-- 5. BUTTONS -->
+					<fieldset class="playground-fieldset">
+						<legend>5. КНОПКИ</legend>
+
+						<h3>Типы кнопок</h3>
+						<div class="form-row" style="align-items: center; gap: 20px;">
+							<button type="button" class="form-button form-button--primary">Отправить</button>
+							<button type="button" class="form-button form-button--secondary">Отмена</button>
+							<button type="button" class="form-button form-button--primary" disabled>Отправить (disabled)</button>
+						</div>
+
+						<h3>С иконкой</h3>
+						<div class="form-row" style="align-items: center; gap: 20px;">
+							<button type="button" class="form-button form-button--primary">
+								<span>📤</span> Отправить
+							</button>
+							<button type="button" class="form-button form-button--secondary">
+								<span>←</span> Назад
+							</button>
+						</div>
+
+						<h3>На всю ширину</h3>
+						<button type="button" class="form-button form-button--primary form-button--full">
+							Оставить заявку
+						</button>
+
+						<h3>Маленькая (для удаления)</h3>
+						<button type="button" class="form-button form-button--secondary form-button--small">
+							Удалить
+						</button>
+
+						<h3>Как ссылка (тег &lt;a&gt;)</h3>
+						<a href="#" class="form-button form-button--primary">Перейти к следующему шагу</a>
+					</fieldset>
+
+				</form>
+			</div>
+		</section>
+	</main>
+	
+	<footer>
+		<div class="container">
+			<div class="footer_up">
+				<div class="footer_logo col_3 col_md_12">
+					<a href="index.html"><img src="assets/img/common/imglogofooter230x50.png" alt=""></a>
+					<p>Личный бренд инженера-проектировщика.<br>Готовые проекты домов, хозблоков и беседок.</p>
+				</div>
+				<div class="footer_nav col_4 col_md_12">
+					<ul>
+						<li class="footer_submenu">Проекты
+							<ul>
+								<li><a href="index.html">Дома</a></li>
+								<li><a href="index.html">Хозблоки</a></li>
+								<li><a href="index.html">Беседки</a></li>
+							</ul>
+						</li>
+						<li class="footer_submenu">Проектирование
+							<ul >
+								<li><a href="index.html">Проектирование домов</a></li>
+								<li><a href="index.html">Индивидуальные проекты</a></li>
+								<li><a href="index.html">BIM-проектирование</a></li>
+							</ul>
+						</li>						
+					</ul>
+				</div>
+				<div class="footer_nav col_4 col_md_12">
+					<ul>
+						<li class="footer_submenu">Полезности
+							<ul>
+								<li><a href="index.html">Статьи</a></li>
+								<li><a href="index.html">Блог</a></li>
+							</ul>
+						</li>
+						<li class="footer_submenu">Социальные сети
+							<div class="footer-social">
+								<a href="https://t.me/pomazovpro" target="_blank" class="social-btn telegram" aria-label="Telegram"></a>
+								<a href="https://vk.ru/pomazovpro" target="_blank" class="social-btn vk" aria-label="ВКонтакте"></a>
+								<a href="https://www.youtube.com/@pomazov-pro" target="_blank" class="social-btn youtube" aria-label="YouTube"></a>
+								<a href="https://dzen.ru/pomazovpro" target="_blank" class="social-btn dzen" aria-label="dzen"></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer_down">
+				<div class="footer_copyrite col_6 col_md_12">
+					<p><span><!--2009- <script>document.write(new Date().getFullYear())</script>--> © </span> "POMAZOV.PRO" </p>
+					<p><!--Сайт не является публичной офертой.  ИНН 5024199987--></p>
+				</div>
+				<div class="footer_docs col_6 col_md_12">
+					<a href="index.html" target="_blank">Оферта на покупку проекта дома</a>
+					<span>•</span>
+					<a href="index.html" target="_blank">Обработка персональных данных</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="../../assets/js/main.js"></script>
+</body>
+</html>

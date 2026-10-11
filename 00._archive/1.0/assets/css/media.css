@@ -1,0 +1,142 @@
+/* CSS Document */
+/* Основные ширины мониторов
+Пример распространённой сетки брейкпоинтов:
+xs <576 px (max-width: auto) — мобильная версия;
+sm >= 576 px (max-width: 540px) — портретная ориентация планшета;
+md >= 768 px (max-width: 720px) — альбомная ориентация планшета;
+lg >= 992 px (max-width: 960px) — ноутбук;
+xl >= 1200 px (max-width: 1140px) ;
+xxl >= 1440 px (max-width: 1320px) — десктоп.
+*/
+
+/* задаем ширину колонкам flex */
+.col_1 {flex: 1 1 calc((var(--col)*1));max-width: calc(var(--col) * 1);min-width: 0; border: solid 1px green;}
+.col_2 {flex: 1 1 calc((var(--col)*2));max-width: calc(var(--col) * 2);min-width: 0; border: solid 1px green;}
+.col_3 {flex: 1 1 calc((var(--col)*3));max-width: calc(var(--col) * 3);min-width: 0; border: solid 1px green;}
+.col_4 {flex: 1 1 calc((var(--col)*4));max-width: calc(var(--col) * 4);min-width: 0; /*border: solid 1px green;*/}
+.col_5 {flex: 1 1 calc((var(--col)*5));max-width: calc(var(--col) * 5);min-width: 0; /*border: solid 1px green;*/}
+.col_6 {flex: 1 1 calc((var(--col)*6));max-width: calc(var(--col) * 6);min-width: 0; border: solid 1px green;}
+.col_7 {flex: 1 1 calc((var(--col)*7));max-width: calc(var(--col) * 7);min-width: 0; border: solid 1px green;}
+.col_8 {flex: 1 1 calc((var(--col)*8));max-width: calc(var(--col) * 8);min-width: 0; border: solid 1px green;}
+.col_9 {flex: 1 1 calc((var(--col)*9));max-width: calc(var(--col) * 9);min-width: 0; border: solid 1px green;}
+.col_10 {flex: 1 1 calc((var(--col)*10));max-width: calc(var(--col) * 10);min-width: 0; /*border: solid 1px green;*/}
+.col_11 {flex: 1 1 calc((var(--col)*11));max-width: calc(var(--col) * 11);min-width: 0; /*border: solid 1px green;*/}
+.col_12 {flex: 1 1 calc((var(--col)*12));max-width: calc(var(--col) * 12);min-width: 0; /*border: solid 1px green;*/}
+
+/* Большие десктопы */
+@media (min-width: 1440px){}
+/* Ноутбуки и большие планшеты (l)*/
+@media (max-width: 1024px) {
+	.container{width: 90%;}
+	nav .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+  /* Скрываем десктопное меню и CTA */
+  .nav_menu, .nav_cta {display: none;}  
+  /* Показываем бургер */
+  .nav_burger {display: flex;}  
+  /* Мобильное меню - выпадающее */
+  .nav_menu.is_active {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: calc(100% - 30px); /* Отступы по бокам */
+    margin: 0 15px;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }  
+  .nav_menu.is_active ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }  
+  .nav_menu.is_active ul li {width: 100%;}  
+  .nav_menu.is_active ul li a {
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+  }  
+  /* Стрелка для пунктов с подменю */
+  .nav_menu ul li.has_submenu > a::before {
+    right: 20px;
+    font-size: 16px;
+  }  
+  /* Подменю на мобильных */
+  .nav_menu ul li.has_submenu > ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    display: none; /* Скрыто по умолчанию */
+    background: var(--light-bg);
+    width: 100%;
+  }  
+  /* Показываем подменю при классе .is_open */
+  .nav_menu ul li.has_submenu.is_open > ul {
+    display: flex;
+    flex-direction: column;
+  }  
+  .nav_menu ul li.has_submenu > ul li a {
+    padding: 12px 20px 12px 35px; /* Отступ слева для вложенности */
+    font-size: 14px;
+  }  
+  /* Поворот стрелки при открытом подменю */
+  .nav_menu ul li.has_submenu.is_open > a::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+	/* Анимация бургера в крестик */
+	.nav_burger.is_active span:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.nav_burger.is_active span:nth-child(2) {
+		opacity: 0;
+	}
+	.nav_burger.is_active span:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+	.nav_menu_cta {
+    display: block;
+		margin: 0 auto;
+		width: 100%;
+  }  
+  .nav_menu_cta .button {
+    display: block;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+}
+/* Планшеты (md)*/
+@media (max-width: 960px){
+	.col_md_12 {flex: 1 1 calc((var(--col)*12) - var(--gutter));max-width: calc(var(--col) * 12);min-width: 0; border: solid 1px green;}
+	.nav_menu ul li a {
+    padding: clamp(8px, 0.8vw, 12px) clamp(10px, 1vw, 15px);
+    font-size: clamp(11px, 0.9vw, 14px);
+  }  
+  .nav_menu { margin: 0 20px; }  
+  .button {
+    padding: clamp(8px, 0.8vw, 10px) clamp(12px, 1vw, 20px);
+    font-size: clamp(11px, 0.9vw, 14px);
+  }
+	
+}
+/* Планшеты (sd)*/
+@media (max-width: 768px){}
+/* Мобильные телефоны — 1 карточка в ряду, на всю ширину (s)*/
+@media (max-width: 480px){}

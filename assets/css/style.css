@@ -78,7 +78,7 @@ body::before {
   height: 0;
   visibility: hidden;
 }
-header,nav,main,footer {width: 100%; /*border: 1px solid red; /*для отладки*/}
+header,nav,main,footer {width: 100%;}
 main {
   flex-grow: 1; /* растягиваем вертикально */
   min-height: 0;
@@ -137,13 +137,15 @@ img {
   margin: 0 auto;
 }
 /* ШАПКА САЙТА */
-.navbar {
-  height: clamp(70px, 7vw, 92px);
+.header{
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Красивая тень */
   transition: box-shadow 0.3s ease;
+}
+.navbar {
+  height: clamp(70px, 7vw, 92px);
   background: var(--white);
 }
 .navbar .container {
@@ -293,13 +295,23 @@ img {
   justify-content: flex-end;
 }
 /* === ЗАГОЛОВОК СТРАНИЦЫ === */
-.page-header .container {flex-direction: column;}
+.page-header .container {flex-wrap: nowrap;}
 .page-header {
   background: var(--bglight);
   padding: 40px 0 20px;
-  margin-bottom: 40px;
+  margin: 0;
 }
- .breadcrumbs {
+.page-header_img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  height: auto;
+  border-radius: var(--radius-base);
+  /* background: var(--white); */
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+.breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -436,10 +448,11 @@ img {
   width: 100%; /* Было auto — нужно 100% */
   height: 200px;
   object-fit: cover;
-  border-radius: var(--radius-base) var(--radius-base) 0 0;
+  border-radius: var(--radius-base) var(--radius-base);
+  margin-bottom: 20px;
   display: block;
 }
-card-icon {
+.card-icon {
   width: 48px;
   height: 48px;
   margin-bottom: 20px;
