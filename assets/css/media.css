@@ -76,6 +76,14 @@
   .grid_md2 {grid-template-columns: repeat(2, 1fr);}
   .grid_md3 {grid-template-columns: repeat(3, 1fr);}
   .page-header .container {flex-wrap: wrap;}
+  .aside {position: static; margin-bottom: 32px;}  
+  .aside ul {display: flex; flex-wrap: wrap; gap: 8px;}  
+  .aside ul a {
+    background: var(--bglight);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+  }
 }
 /* (sm) ПЛАНШЕТ: 768px */
 @media (max-width: 768px) {

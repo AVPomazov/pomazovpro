@@ -16,72 +16,81 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/form.css">
 		<link rel="stylesheet" href="assets/css/media.css">
-		<link rel="stylesheet" href="assets/css/legal.css">
 	</head>
 	
-	<body id="#top">
-		
-		<nav id="navbar" class="site-nav">
-			<div class="container">
-				<a href="index.html" class="nav_logo col_2 col_md_3">
-					<img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO">
-				</a>
-				<div class="nav_menu col_10">
-					<ul>
-						<li class="has_submenu">
-							<a href="#">Проекты</a>
-							<ul>
-								<li><a href="index.html">Дома</a></li>
-								<li><a href="index.html">Хозблоки</a></li>
-								<li><a href="index.html">Беседки</a></li>
-							</ul>
-						</li>
-						<li class="has_submenu">
-							<a href="#">Проектирование</a>
-							<ul>
-								<li><a href="brief.html">Бриф на проектирование</a></li>
-							</ul>
-						</li>
-						<li class="has_submenu">
-							<a href="#">Полезности</a>
-							<ul>
-								<li><a href="index.html">Статьи</a></li>
-								<li><a href="index.html">Блог</a></li>
-							</ul>
-						</li>
-						<li><a href="index.html">Оплата и доставка</a></li>
-						<li><a href="about.html">О нас</a></li>
-					</ul>
-					<!-- Кнопка CTA -->
-					<div class="nav_menu_cta">
-						<a href="#order" class="button">Хочу проект</a>
-					</div>
-				</div>
-				<button type="button" class="burger" id="burger" aria-label="Открыть меню">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</nav>
+	<body>
+		<header class="header no-print">
+      <nav class="navbar" id="navbar" aria-label="Главная навигация">
+        <div class="container">
+          <a href="index.html" class="navbar_logo">
+            <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+          </a>
+          <div class="navbar_menu">
+            <ul>
+              <li class="has_submenu">
+                <a href="#">Проекты</a>
+                <ul>
+                  <li><a href="service.html">Дома</a></li>
+                  <li><a href="service.html">Бани</a></li>
+                  <li><a href="service.html">Беседки</a></li>
+                  <li><a href="service.html">Хозблоки</a></li>
+                </ul>
+              </li>
+              <li class="has_submenu">
+                <a href="#">Проектирование</a>
+                <ul>
+                  <li><a href="service.html">Индивидуальное</a></li>
+                  <li><a href="service.html">BIM-проектирование</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Обо мне</a></li>
+              <li class="has_submenu">
+                <a href="#">Полезности</a>
+                <ul>
+                  <li><a href="service.html">Блог</a></li>
+                  <li><a href="service.html">Материалы</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar_menu_mobile_cta">
+              <a href="#" class="button">Хочу проект</a>
+            </div>
+          </div>
+          <div class="navbar_actions">
+            <a href="#" class="button">Хочу проект</a>
+            <!-- сюда можно добавить ещё элементы -->
+          </div>
+          <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
 		
 		<main> 
-			<!-- Шапка страницы: breadcrumbs + заголовок -->
-			<header class="page-header">
-				<div class="container">
-					<nav class="breadcrumbs">
-						<a href="index.html">Главная</a>
-						<span>/</span>
-						<span>Политика конфиденциальности</span>
-					</nav>
-					<h1>Политика конфиденциальности</h1>
-					<p>Последнее обновление: 6 октября 2026 г.</p>
-				</div>
-			</header>
+			  <!-- 0. ЗАГОЛОВОК СТРАНИЦЫ -->
+      <header class="page-header">
+        <div class="container">
+          <div class="col_8 col_md12">
+            <nav class="breadcrumbs">
+              <a href="index.html">Главная</a>
+              <span class="separator">/</span>
+              <span class="current">Политика конфиденциальности</span>
+            </nav>
+            <p class="page-eyebrow">pomazov.pro - документы</p>
+            <h1 class="page-title">Политика конфиденциальности</h1>
+						<p>Последнее обновление: 6 октября 2026 г.</p>
+          </div>
+          <div class="col_4 col_md12"></div>
+        </div>
+      </header>
 			<section class="page-content">
-				<div class="container legal-container"> 
+				<div class="container"> 
 					<!-- Боковое оглавление (липнет при скролле на десктопе) -->
-					<aside class="legal-toc">
+					<aside class="aside aside_left col_3 col_md12">
 						<h4>Содержание</h4>
 						<ul>
 							<li><a href="#section-1">1. Общие положения</a></li>
@@ -97,8 +106,8 @@
 							<li><a href="#section-11">11. Контактная информация</a></li>
 						</ul>
 					</aside>
-					<article class="legal-text">
-						<ol class="legal-list">
+					<article class="article col_9 col_md12">
+						<ol class="">
 							<li id="section-1">Общие положения
 								<ol>
 									<li>Настоящая Политика конфиденциальности (далее — Политика) разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению их безопасности, предпринимаемые Самозанятым Помазовым Алексеем Владимировичем (ИНН 232906832341, далее — «Оператор»).</li>
@@ -258,55 +267,17 @@
 			</section>
 		</main>
 		
-		<footer>
+		<footer class="footer">
 			<div class="container">
-				<div class="footer_up">
-					<div class="footer_logo col_3 col_md_12">
-						<a href="index.html"><img src="assets/img/common/footerlogo.svg" alt=""></a>
-						<p>Личный бренд инженера-проектировщика.<br>Готовые проекты домов, хозблоков и беседок.</p>
-					</div>
-					<div class="footer_nav col_4 col_md_6 col_sm_12">
-						<ul>
-							<li class="footer_submenu">Проекты
-								<ul>
-									<li><a href="index.html">Дома</a></li>
-									<li><a href="index.html">Хозблоки</a></li>
-									<li><a href="index.html">Беседки</a></li>
-								</ul>
-							</li>
-							<li class="footer_submenu">Проектирование
-								<ul>
-									<li><a href="index.html">Проектирование домов</a></li>
-									<li><a href="index.html">Индивидуальные проекты</a></li>
-									<li><a href="index.html">BIM-проектирование</a></li>
-								</ul>
-							</li>						
-						</ul>
-					</div>
-					<div class="footer_nav col_4 col_md_6 col_sm_12">
-						<ul>
-							<li class="footer_submenu">Полезности
-								<ul>
-									<li><a href="index.html">Статьи</a></li>
-									<li><a href="index.html">Блог</a></li>
-								</ul>
-							</li>
-							<li class="footer_submenu">Социальные сети
-								<div class="footer-social">
-									<a href="https://t.me/pomazovpro" target="_blank" class="social-btn telegram" aria-label="Telegram"></a>
-									<a href="https://vk.ru/pomazovpro" target="_blank" class="social-btn vk" aria-label="ВКонтакте"></a>
-									<a href="https://www.youtube.com/@pomazov-pro" target="_blank" class="social-btn youtube" aria-label="YouTube"></a>
-									<a href="https://dzen.ru/pomazovpro" target="_blank" class="social-btn dzen" aria-label="dzen"></a>
-								</div>
-							</li>
-						</ul>
-					</div>
+				<div class="footer_top">
+					<!-- Здесь будет логотип, меню, соцсети -->
 				</div>
-				<div class="footer_down">
-					<div class="footer_copyrite col_6 col_sm_12">
-						<p><span><!--2026---> <script>document.write(new Date().getFullYear())</script> © </span> "POMAZOV.PRO" </p>
+				<!-- Нижняя часть (копирайт и документы) -->
+				<div class="footer_bottom">
+					<div class="footer-copy">
+						<p class="footer_copy">© 2026–<script>document.write(new Date().getFullYear())</script> POMAZOV.PRO</p>
 					</div>
-					<div class="footer_docs col_6 col_sm_12">
+					<div class="footer_docs">
 						<a href="oferta.html" target="_blank">Оферта на покупку проекта дома</a>
 						<span>•</span>
 						<a href="privacy.html" target="_blank">Обработка персональных данных</a>
@@ -314,13 +285,18 @@
 				</div>
 			</div>
 		</footer>
-		
+
+		<a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+			</svg>
+		</a>
 		<a href="#top" class="scroll-to-top" aria-label="Наверх">
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 				<polyline points="18 15 12 9 6 15"></polyline>
 			</svg>
 		</a>
-		
+
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

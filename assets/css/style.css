@@ -298,7 +298,7 @@ img {
 .page-header .container {flex-wrap: nowrap;}
 .page-header {
   background: var(--bglight);
-  padding: 40px 0 20px;
+  padding: var(--space-3xl) 0 var(--space-lg);
   margin: 0;
 }
 .page-header_img {
@@ -311,6 +311,7 @@ img {
   margin-bottom: 20px;
   object-fit: contain;
 }
+.page-content {padding: 40px 0 60px 0;  width: 100%;}
 .breadcrumbs {
   display: flex;
   align-items: center;
@@ -396,7 +397,85 @@ img {
 .section_white {background: var(--white);}
 .section_gray {background: var(--bglight);}
 .section_accent {background: var(--accent-light);}
-.section-header {margin-bottom: 40px;}
+.section-header {margin-bottom: var(--space-3xl); }
+.aside{
+  position: sticky; 
+  top: 110px;
+  background: var(--bglight);
+  padding: 24px;
+  border-radius: var(--radius-base);
+}
+.aside_left{align-self:flex-start;}
+.aside_right{align-self:flex-end;}
+.aside h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+.aside ul {list-style: none; padding-left: 0;}
+.aside ul a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: var(--space-xs) 0;
+  transition: color 0.2s ease;
+}
+.aside ul a:hover {color: var(--accent);}
+.article{padding: 0 20px;}
+.article h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border); /* Визуальный разделитель разделов */
+}
+.article p {
+  color: var(--text);
+  font-size: 16px; /* Увеличиваем с 14px до 16px */
+  margin: 0 0 12px 0;
+  /* text-align и hyphens наследуются из .text-justify в style.css */
+}
+.article > ol > li {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.article > ol > li > ol {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 12px;
+}
+/* Уровень 2: нумерованные пункты внутри раздела */
+.article ol > li > ol {
+  font-weight: 400; /* Сбрасываем жирность, которую мог унаследовать от заголовка раздела */
+  font-size: 16px; /* Базовый читаемый размер */
+  line-height: 1.6;
+  margin-top: 12px; /* Отступ от заголовка раздела */
+  list-style-type: decimal; /* Гарантируем обычные цифры: 1, 2, 3... */
+}
+.article ol > li > ol > li {
+  margin-bottom: 12px; /* Воздух между пунктами */
+  color: var(--text);
+  text-align: justify;
+}
+/* Уровень 3: маркированные списки (буллеты) внутри нумерованных пунктов */
+.article ol > li > ol > li > ul {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  list-style-type: disc; /* Обычные точки */
+}
+.article ol > li > ol > li > ul > li {
+  margin-bottom: 6px;
+  font-size: 15px; /* Чуть мельче для визуальной иерархии */
+  color: var(--secondary); /* Приглушенный цвет для второстепенной информации */
+}
+/* Ссылки внутри юридических текстов не должны ломать верстку на мобильных */
+.article a {word-break: break-all;}
 /* === БАЗОВАЯ КАРТОЧКА === */
 .card {
   background: var(--white);

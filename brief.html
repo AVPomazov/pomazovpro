@@ -26,52 +26,56 @@
 	<!-- Якорь для прокрутки -->
   <div id="page-top" style="position: relative; top: -80px;"></div>
 	
-	<nav id="navbar" class="site-nav">
-		<div class="container">
-			<a href="index.html" class="nav_logo col_2 col_md_3">
-				<img src="assets/img/common/imglogo234x50.png" alt="POMAZOV.PRO">
-			</a>
-			<div class="nav_menu col_10">
-				<ul>
-					<li class="has_submenu">
-						<a href="#">Проекты</a>
-						<ul>
-							<li><a href="index.html">Дома</a></li>
-							<li><a href="index.html">Хозблоки</a></li>
-							<li><a href="index.html">Беседки</a></li>
-						</ul>
-					</li>
-					<li class="has_submenu">
-						<a href="index.html">Проектирование</a>
-						<ul>
-							<li><a href="brief.html">Бриф на проектирование</a></li>
-						</ul>
-					</li>
-					<li class="has_submenu">
-						<a href="#">Полезности</a>
-						<ul>
-							<li><a href="index.html">Статьи</a></li>
-							<li><a href="index.html">Блог</a></li>
-						</ul>
-					</li>
-					<li><a href="index.html">Оплата и доставка</a></li>
-					<li><a href="index.html">О нас</a></li>
-				</ul>
-				<!-- Кнопка CTA -->
-				<div class="nav_menu_cta">
-					<a href="#order" class="button">Хочу проект</a>
+	<header class="header no-print">
+		<nav class="navbar" id="navbar" aria-label="Главная навигация">
+			<div class="container">
+				<a href="index.html" class="navbar_logo">
+					<img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+				</a>
+				<div class="navbar_menu">
+					<ul>
+						<li class="has_submenu">
+							<a href="#">Проекты</a>
+							<ul>
+								<li><a href="service.html">Дома</a></li>
+								<li><a href="service.html">Бани</a></li>
+								<li><a href="service.html">Беседки</a></li>
+								<li><a href="service.html">Хозблоки</a></li>
+							</ul>
+						</li>
+						<li class="has_submenu">
+							<a href="#">Проектирование</a>
+							<ul>
+								<li><a href="service.html">Индивидуальное</a></li>
+								<li><a href="service.html">BIM-проектирование</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">Обо мне</a></li>
+						<li class="has_submenu">
+							<a href="#">Полезности</a>
+							<ul>
+								<li><a href="service.html">Блог</a></li>
+								<li><a href="service.html">Материалы</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="navbar_menu_mobile_cta">
+						<a href="#" class="button">Хочу проект</a>
+					</div>
 				</div>
+				<div class="navbar_actions">
+					<a href="#" class="button">Хочу проект</a>
+					<!-- сюда можно добавить ещё элементы -->
+				</div>
+				<!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+				<button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 			</div>
-			<!--<div class="nav_cta col_2">
-				<a href="#order" class="button">Хочу проект</a>
-			</div>-->
-			<button type="button" class="burger" id="burger" aria-label="Открыть меню">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-		</div>
-	</nav>
+		</nav>
+	</header>
 	
 	<main>
 		<!-- Шапка страницы: breadcrumbs + заголовок -->

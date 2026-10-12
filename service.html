@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Услуга в разработке — POMAZOV.PRO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/media.css">
-</head>
-<body>
-  <!-- Навигация (копируешь из index.html) -->
-  <header class="header">
-    <nav class="navbar" id="navbar" aria-label="Главная навигация">
-      <div class="container">
-        <a href="index.html" class="navbar_logo">
-          <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO">
-        </a>
-        <div class="navbar_menu">
-          <ul>
-            <li class="has_submenu">
-              <a href="#">Проекты</a>
-              <ul>
-                <li><a href="#">Дома</a></li>
-                <li><a href="#">Бани</a></li>
-                <li><a href="#">Беседки</a></li>
-                <li><a href="#">Хозблоки</a></li>
-              </ul>
-            </li>
-            <li class="has_submenu">
-              <a href="#">Проектирование</a>
-              <ul>
-                <li><a href="service-individual.html">Индивидуальное</a></li>
-                <li><a href="service-bim.html">BIM-проектирование</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html">Обо мне</a></li>
-            <li><a href="blog.html">Полезности</a></li>
-          </ul>
+	<head>
+		<meta charset="UTF-8">
+		<title>Алексей Помазов — инженерное проектирование | POMAZOV.PRO</title>
+		<meta name="DESCRIPTION" content=""/>
+		<meta name="KEYWORDS" content=""/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+		<!-- FAVICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/icons/favicon_180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="assets/img/common/icons/favicon_192x192.png">
+		<link rel="icon" type="image/png" sizes="512x512" href="assets/img/common/icons/favicon_512x512.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/common/icons/favicon_96x96.png">
+		<link rel="shortcut icon" href="assets/img/common/icons/favicon.ico">
+		<!-- СТИЛИ (порядок важен!) -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/form.css">
+		<link rel="stylesheet" href="assets/css/media.css">
+	</head>
+	
+	<body>
+		<header class="header no-print">
+      <nav class="navbar" id="navbar" aria-label="Главная навигация">
+        <div class="container">
+          <a href="index.html" class="navbar_logo">
+            <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+          </a>
+          <div class="navbar_menu">
+            <ul>
+              <li class="has_submenu">
+                <a href="#">Проекты</a>
+                <ul>
+                  <li><a href="service.html">Дома</a></li>
+                  <li><a href="service.html">Бани</a></li>
+                  <li><a href="service.html">Беседки</a></li>
+                  <li><a href="service.html">Хозблоки</a></li>
+                </ul>
+              </li>
+              <li class="has_submenu">
+                <a href="#">Проектирование</a>
+                <ul>
+                  <li><a href="service.html">Индивидуальное</a></li>
+                  <li><a href="service.html">BIM-проектирование</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Обо мне</a></li>
+              <li class="has_submenu">
+                <a href="#">Полезности</a>
+                <ul>
+                  <li><a href="service.html">Блог</a></li>
+                  <li><a href="service.html">Материалы</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar_menu_mobile_cta">
+              <a href="#" class="button">Хочу проект</a>
+            </div>
+          </div>
+          <div class="navbar_actions">
+            <a href="#" class="button">Хочу проект</a>
+            <!-- сюда можно добавить ещё элементы -->
+          </div>
+          <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <div class="navbar_actions">
-          <a href="brief.html" class="button">Хочу проект</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
   <main>
     <section class="section section-white">
       <div class="container">
         <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-          <h1>Индивидуальное проектирование</h1>
+          <h1>Страница в разработке!</h1>
           <p style="color: var(--secondary); font-size: 18px; margin-bottom: 32px;">
             Этот раздел находится в разработке. Скоро здесь появится подробная информация об услуге.
           </p>
@@ -61,6 +87,36 @@
     </section>
   </main>
 
-  <!-- Футер (копируешь из index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_top">
+        <!-- Здесь будет логотип, меню, соцсети -->
+      </div>
+      <!-- Нижняя часть (копирайт и документы) -->
+      <div class="footer_bottom">
+        <div class="footer-copy">
+          <p class="footer_copy">© 2026–<script>document.write(new Date().getFullYear())</script> POMAZOV.PRO</p>
+        </div>
+        <div class="footer_docs">
+          <a href="oferta.html" target="_blank">Оферта на покупку проекта дома</a>
+          <span>•</span>
+          <a href="privacy.html" target="_blank">Обработка персональных данных</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+    </svg>
+  </a>
+  <a href="#top" class="scroll-to-top" aria-label="Наверх">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
