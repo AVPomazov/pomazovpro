@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест типографики | POMAZOV.PRO</title>
+  <style>
+    :root {
+      --h1-size: 36px;
+      --h2-size: 30px;
+      --h3-size: 24px;
+      --h4-size: 20px;
+      --h5-size: 18px;
+      --h6-size: 16px;
+      --p-size: 16px;
+      --accent: #94b814;
+      --text: #14171a;
+      --secondary: #61696e;
+      --bg: #f6f7f5;
+    }
+    
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+      margin: 0; 
+      display: flex; 
+      min-height: 100vh; 
+    }
+    
+    /* Панель управления */
+    .controls {
+      width: 320px;
+      background: #fff;
+      padding: 24px;
+      border-right: 1px solid #d6dbd6;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    
+    .controls h3 { margin-top: 0; font-size: 18px; }
+    .controls > p { font-size: 13px; color: var(--secondary); margin-bottom: 24px; line-height: 1.5; }
+    
+    .control-group { margin-bottom: 20px; }
+    .control-group label { 
+      display: block; 
+      font-weight: 600; 
+      margin-bottom: 6px; 
+      font-size: 14px; 
+      color: var(--text); 
+    }
+    .control-group input[type="range"] { 
+      width: 100%; 
+      cursor: pointer;
+    }
+    .control-group .value { 
+      font-size: 14px; 
+      color: var(--accent); 
+      font-weight: 700; 
+      float: right; 
+    }
+
+    /* Область предпросмотра */
+    .preview {
+      flex: 1;
+      padding: 40px;
+      background: var(--bg);
+    }
+    .preview-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Динамические стили типографики */
+    .preview h1 { font-size: var(--h1-size); font-weight: 900; line-height: 1.2; margin: 0 0 16px 0; color: var(--text); }
+    .preview h2 { font-size: var(--h2-size); font-weight: 700; line-height: 1.2; margin: 32px 0 16px 0; color: var(--text); }
+    .preview h3 { font-size: var(--h3-size); font-weight: 700; line-height: 1.3; margin: 24px 0 12px 0; color: var(--text); }
+    .preview h4 { font-size: var(--h4-size); font-weight: 700; line-height: 1.3; margin: 20px 0 12px 0; color: var(--text); }
+    .preview h5 { font-size: var(--h5-size); font-weight: 700; line-height: 1.3; margin: 16px 0 8px 0; color: var(--text); }
+    .preview h6 { font-size: var(--h6-size); font-weight: 700; line-height: 1.3; margin: 12px 0 8px 0; color: var(--text); }
+    .preview p { font-size: var(--p-size); line-height: 1.6; margin: 0 0 16px 0; color: var(--secondary); }
+    
+    .preview .eyebrow { 
+      font-size: 14px; 
+      text-transform: uppercase; 
+      color: var(--accent); 
+      font-weight: 600; 
+      margin-bottom: 12px; 
+      letter-spacing: 1px; 
+    }
+
+    /* Мобильная адаптация панели */
+    @media (max-width: 900px) {
+      body { flex-direction: column; }
+      .controls { 
+        width: 100%; 
+        height: auto; 
+        max-height: 50vh;
+        position: relative; 
+        border-right: none; 
+        border-bottom: 1px solid #d6dbd6; 
+      }
+      .preview { padding: 20px; }
+      .preview-container { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <h3>Настройка шрифтов</h3>
+    <p>Двигай ползунки. Изменения применяются мгновенно. Сужай окно браузера, чтобы проверить мобильную версию.</p>
+    
+    <div class="control-group">
+      <label>H1 (Главный заголовок) <span class="value" id="val-h1">36px</span></label>
+      <input type="range" id="h1" min="24" max="64" value="36" step="1">
+    </div>
+    <div class="control-group">
+      <label>H2 (Заголовок секции) <span class="value" id="val-h2">30px</span></label>
+      <input type="range" id="h2" min="20" max="48" value="30" step="1">
+    </div>
+    <div class="control-group">
+      <label>H3 (Заголовок карточки) <span class="value" id="val-h3">24px</span></label>
+      <input type="range" id="h3" min="16" max="36" value="24" step="1">
+    </div>
+    <div class="control-group">
+      <label>H4 (Подзаголовок) <span class="value" id="val-h4">20px</span></label>
+      <input type="range" id="h4" min="14" max="32" value="20" step="1">
+    </div>
+    <div class="control-group">
+      <label>H5 (Мелкий заголовок) <span class="value" id="val-h5">18px</span></label>
+      <input type="range" id="h5" min="12" max="24" value="18" step="1">
+    </div>
+    <div class="control-group">
+      <label>H6 (Микро-заголовок) <span class="value" id="val-h6">16px</span></label>
+      <input type="range" id="h6" min="10" max="20" value="16" step="1">
+    </div>
+    <div class="control-group">
+      <label>P (Основной текст) <span class="value" id="val-p">16px</span></label>
+      <input type="range" id="p" min="12" max="22" value="16" step="1">
+    </div>
+  </div>
+
+  <div class="preview">
+    <div class="preview-container">
+      <div class="eyebrow">Пример страницы</div>
+      <h1>Инженерный подход к проектированию</h1>
+      <p>Личный бренд инженера-проектировщика: готовые проекты, индивидуальная работа и BIM-моделирование каркасных домов.</p>
+      
+      <h2>Почему выбирают мою документацию</h2>
+      <p>Инженерный подход, исключающий ошибки на этапе строительства. Каждое решение обосновано расчетами и нормами.</p>
+      
+      <h3>Точность в деталях</h3>
+      <p>Работаю в BIM (Revit). Это значит, что любая стена, окно или узел уже просчитаны и не создадут проблем на площадке.</p>
+      
+      <h4>Дополнительные разделы</h4>
+      <p>Этот уровень заголовка часто используется для подразделов внутри больших текстовых блоков.</p>
+      
+      <h5>Мелкие структурные элементы</h5>
+      <p>Подходит для подписей к группам полей в формах или второстепенных разделов.</p>
+      
+      <h6>Микро-заголовки</h6>
+      <p>Используется для очень мелких структурных акцентов, например, в футере или боковой панели.</p>
+    </div>
+  </div>
+
+  <script>
+    const inputs = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
+    
+    inputs.forEach(id => {
+      const input = document.getElementById(id);
+      const valDisplay = document.getElementById('val-' + id);
+      
+      input.addEventListener('input', (e) => {
+        const value = e.target.value + 'px';
+        document.documentElement.style.setProperty(`--${id}-size`, value);
+        valDisplay.textContent = value;
+      });
+    });
+  </script>
+</body>
+</html>
