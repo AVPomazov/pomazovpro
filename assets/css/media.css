@@ -58,7 +58,7 @@
 .burger.is_active span:nth-child(1) {transform: translateY(8px) rotate(45deg);}
 .burger.is_active span:nth-child(2) {opacity: 0;}
 .burger.is_active span:nth-child(3) {transform: translateY(-8px) rotate(-45deg);}
-.navbar_menu_mobile_cta{
+.navbar-menu-mobile-cta{
   margin-top: 30px;
   width: 100%;
   text-align: center;
@@ -91,7 +91,7 @@
   .grid_sm2 {grid-template-columns: repeat(2, 1fr);}
   .grid_sm3 {grid-template-columns: repeat(3, 1fr);}
   .burger {display: flex;}
-  .navbar_menu {
+  .navbar-menu {
     position: fixed;
     top: clamp(70px, 7vw, 92px);
     left: 0;
@@ -113,7 +113,7 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
   }
-  .navbar_menu ul {
+  .navbar-menu ul {
     flex-direction: column;
     align-items: center;
     border-bottom: none;
@@ -122,21 +122,21 @@
     padding-top: 10px;
     margin:0;
   }
-  .navbar_menu ul li {
+  .navbar-menu ul li {
     margin: 0;
     width: 100%;
     text-align: center;
     padding: 0;
   }
-  .navbar_menu ul li a {
+  .navbar-menu ul li a {
     font-size: 18px; /* ПОИГРАЙ С ЭТИМ: размер шрифта в мобильном меню */
     padding: 16px 0;
     border-bottom: 1px solid var(--bglight); /* ПОИГРАЙ С ЭТИМ: разделители между пунктами */
     padding-left: 16px;
   }
-  .navbar_menu ul li a::after {display: none;}
-  .navbar_menu ul li.has_submenu > a::before {content: "";}
-  .navbar_menu ul li.has_submenu > ul {
+  .navbar-menu ul li a::after {display: none;}
+  .navbar-menu ul li.has_submenu > a::before {content: "";}
+  .navbar-menu ul li.has_submenu > ul {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -147,29 +147,29 @@
     padding: 0;
     margin-top: -10px; /* Чуть подтягиваем к родителю */
   }
-  .navbar_menu ul li.has_submenu > ul li a {
+  .navbar-menu ul li.has_submenu > ul li a {
     font-size: 18px;
     padding: 12px 0;
     color: var(--secondary);
   }
-  .navbar_menu.is_active {
+  .navbar-menu.is_active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     padding: 0 20px;
     margin: 0;
   }
-  .navbar_actions {display: none;}
-  .navbar_menu_mobile_cta{display: flex;justify-content: center;}
+  .navbar-actions {display: none;}
+  .navbar-menu-mobile-cta{display: flex;justify-content: center;}
   /* Стилизуем скроллбар (опционально, для красоты) */
-  .navbar_menu::-webkit-scrollbar {width: 7px;}
-  .navbar_menu::-webkit-scrollbar-track {background: var(--bglight);}
-  .navbar_menu::-webkit-scrollbar-thumb {
+  .navbar-menu::-webkit-scrollbar {width: 7px;}
+  .navbar-menu::-webkit-scrollbar-track {background: var(--bglight);}
+  .navbar-menu::-webkit-scrollbar-thumb {
     background: var(--border);
     border-radius: var(--radius-sm);
   }
-  .navbar_menu::-webkit-scrollbar-thumb:hover {background: var(--secondary);}
-  .footer_bottom {
+  .navbar-menu::-webkit-scrollbar-thumb:hover {background: var(--secondary);}
+  .footer-bottom {
     flex-direction: column;
     text-align: center;
   }

@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Бургер
   const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.navbar_menu');
+  const menu = document.querySelector('.navbar-menu');
   const menuLinks = menu.querySelectorAll('a');
   if (burger && menu) {
     burger.addEventListener('click', function () {
