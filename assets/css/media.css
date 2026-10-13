@@ -72,6 +72,7 @@
 }
 /* (md)  960px: маленькие десктопы */
 @media (max-width: 960px) {
+  .col_md12{flex: 1 1 calc(var(--col)*12); max-width: calc(var(--col)*12) ;min-width: 0;}
   .grid_md1 {grid-template-columns: repeat(1, 1fr);}
   .grid_md2 {grid-template-columns: repeat(2, 1fr);}
   .grid_md3 {grid-template-columns: repeat(3, 1fr);}
