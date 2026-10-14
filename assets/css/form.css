@@ -1,6 +1,18 @@
 /* CSS Document */
 /* БАЗОВЫЕ СТИЛИ ФОРМ  */
 /* --- 0. ОБЕРТКА ФОРМЫ --- */
+:root {
+  /* --- Формы: специфичные переменные --- */
+  /* Состояния */
+  --form-focus-ring: 0 0 0 3px rgba(148, 184, 20, 0.25); /* Мягкое зеленое свечение вместо резкой рамки браузера */
+  
+  /* Текст внутри форм */
+  --form-disabled-text: #99abb5;
+  
+  /* Геометрия и анимация */
+  --form-transition: all 0.3s ease-in-out; /* Плавность для всех ховеров и фокусов */
+  --form-gap: 16px; /* Стандартный отступ между label и input, или input и подсказкой */
+}
 form {
   width: 100%;
   margin: 0 auto;
@@ -9,11 +21,17 @@ form {
 }
 /* --- Fieldset (базовый сброс для всех форм) --- */
 fieldset {
-  border: none;       /* Убираем стандартную рамку браузера */
-  padding: 0;         /* Убираем стандартные отступы */
-  margin: 0;          /* Убираем стандартные внешние отступы */
-  min-width: 0;       /* Разрешаем сжиматься в flex/grid */
+  border: none;
+  padding: 20px;
+  margin: 30px 0;
+  min-width: 0;
+  border-radius: var(--radius-dropdown);
+  border: 1px solid var(--border);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
+.fieldset_white{background-color: var(--white);}
+.fieldset_gray{background-color: var(--bglight);}
+.fieldset_accent{background-color: var(--accent-light);}
 /* --- Legend (скрыт, для скринридеров) --- */
 legend{
 	position: absolute;
@@ -22,293 +40,355 @@ legend{
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
-/* --- Группа полей --- */
+/* 1. Атомарная обертка одного поля (Label + Input + Hint/Error) */
 .form-group {
-	display: flex;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-	width: 100%;
+  gap: var(--form-gap); /* 16px */
+  margin-bottom: 20px;  /* Отступ до следующего поля */
 }
-.form-group label {
-  margin-bottom: 8px;
-  font-family: 'Inter-Medium', sans-serif;
+/* 1. ЛЕЙБЛЫ И ТЕКСТОВОЕ СОПРОВОЖДЕНИЕ */
+.form-label {
+  display: block;
   font-size: 14px;
-  font-weight: 500;
-  color: var(--flabel);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px; /* Небольшой отступ до самого поля */
 }
-/* Подсказка */
-.form-group .hint {
-	font-size: 13px;
+.form-required {
+  color: var(--ferror); /* Красная звездочка */
+  margin-left: 2px;
+}
+.form-hint {
+  font-size: 13px;
   color: var(--secondary);
-  margin-top: 4px;
+  margin-top: 6px; /* Чуть ближе к полю, чем к следующему блоку */
 }
-/* Ошибка */
-.form-group .hint-error {
+.form-error {
+  font-size: 13px;
   color: var(--ferror);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-/* Успех */
-.form-group .hint-success {
-  color: var(--accent);
+/* Маленькая иконка предупреждения перед текстом ошибки (опционально, но красиво) */
+.form-error::before {
+  content: "⚠"; 
+  font-size: 14px;
 }
-/* --- 1. ПОЛЯ ВВОДА (INPUTS) --- */
-/* --- 2. TEXTAREA & SELECT --- */
-/* Базовые стили для всех полей ввода */
-.form-input, .form-textarea, .form-select {
+/* 2. ПОЛЯ ВВОДА (БАЗА И СОСТОЯНИЯ) */
+.form-input, .form-textarea, .form-select{
   width: 100%;
   padding: 12px 16px;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* ВАЖНО: 16px предотвращает автоматический зум на iOS при фокусе! */
+  font-family: inherit;
   color: var(--text);
-  background: var(--white);
+  background-color: var(--white);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  border-radius: var(--radius-base);
+  transition: var(--form-transition);
+  outline: none; /* Убираем стандартный синий/черный обвод браузера */
 }
-.form-input:focus, .form-textarea:focus, .form-select:focus {
-  outline: none;
+.form-input::placeholder {
+  color: var(--form-disabled-text);
+  opacity: 0.7;
+}
+/* Состояние: Фокус (активное поле) */
+.form-input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(148, 184, 20, 0.15); /* Добавляем мягкое зеленое свечение вокруг (3px) */
+  box-shadow: var(--form-focus-ring); /* Мягкое зеленое свечение */
 }
-/* Состояние: ТЕКСТ-ПОДСКАЗКА (Placeholder) */
-.form-input::placeholder, .form-textarea::placeholder {
-  color: var(--secondary);/* Серый цвет (#61696E), чтобы не сливаться с реальным текстом */
+/* Состояние: Ошибка */
+.form-input.is-error {
+  border-color: var(--ferror);
 }
-/* Специфика: Многострочное поле (Textarea) */
+.form-input.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(219, 46, 46, 0.15); 
+}
+/* Состояние: Отключено (disabled) */
+.form-input:disabled {
+  background-color: var(--bglight);
+  color: var(--form-disabled-text);
+  cursor: not-allowed;
+  border-color: var(--border);
+}
+/* Убираем стандартные стрелочки у input type="number" (они уродливые и разные в браузерах) */
+.form-input[type="number"]::-webkit-inner-spin-button,
+.form-input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0;}
+.form-input[type="number"] { -moz-appearance: textfield; /* Для Firefox */}
+/* 3. TEXTAREA (Многострочное поле) */
 .form-textarea {
-  min-height: 120px;                /* Минимальная высота, чтобы поле не было сплюснутым */
-  resize: vertical;                 /* Разрешаем пользователю растягивать поле ТОЛЬКО вверх-вниз (не вбок) */
+  resize: vertical; /* Разрешаем растягивать только по вертикали */
+  min-height: 120px;
+  line-height: 1.5;
 }
-/* Специфика: Выпадающий список (Select) */
+/* 4. SELECT (Выпадающий список) */
+.form-select-wrapper {position: relative; width: 100%;}
 .form-select {
-  appearance: none;                 /* Убираем стандартную стрелку браузера (она разная в Chrome/Safari) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2361696E' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); /* Наша SVG-стрелка */
-  background-repeat: no-repeat;
-  background-position: right 16px center; /* Прижимаем стрелку вправо с отступом 16px и центрируем по вертикали */
-  padding-right: 40px;              /* Делаем отступ справа внутри поля, чтобы текст не наезжал на стрелку */
-  cursor: pointer;                  /* Курсор превращается в "руку" при наведении */
-}
-/* Состояние: ОШИБКА (добавляется через JS или вручную классом .has-error) */
-.form-input.has-error, .form-textarea.has-error, .form-select.has-error {
-  border-color: var(--ferror);      /* Красная рамка (#DB2E2E) */
-  box-shadow: 0 0 0 3px rgba(219, 46, 46, 0.1); /* Мягкое красное свечение */
-}
-/* --- 3. CHECKBOX & RADIO --- */
-/* --- Базовые стили для обёрток (label) --- */
-.form-checkbox, .form-radio {
-  display: flex;
-  align-items: center;      /* Центрируем чекбокс и текст по вертикали */
-  gap: 10px;                /* Отступ между квадратиком и текстом */
-  cursor: pointer;          /* Курсор-рука при наведении */
-  font-size: 14px;
-  color: var(--flabel);
-  transition: color 0.3s ease;
-}
-.form-checkbox:hover, .form-radio:hover {
-  color: var(--accent);/* Текст зеленеет при наведении */
-}
-/* --- Сам квадратик/кружок (input) --- */
-.form-checkbox input[type="checkbox"], .form-radio input[type="radio"] {
-  width: 20px;              /* Размер квадратика */
-  height: 20px;
-  margin: 0;                /* Убираем стандартные отступы браузера */
-  accent-color: var(--accent); /* Цвет галочки/точки (#94B814) */
+  width: 100%;
+  appearance: none; /* Убираем стандартную стрелку браузера */
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
-  flex-shrink: 0;           /* Не сжимается, если текст длинный */
+  padding-right: 40px; /* Место под кастомную стрелку */
 }
-/* --- Группы (несколько чекбоксов/радио в строку) --- */
-.form-checkbox-group, .form-radio-group {
+/* Кастомная стрелка для селекта */
+.form-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none; /* Чтобы клик проходил сквозь стрелку к селекту */
+  transition: transform 0.2s ease;
+}
+/* Поворот стрелки при фокусе на селекте */
+.form-select-wrapper:focus-within::after {transform: translateY(-30%) rotate(225deg);}
+/* 5. CHECKBOX И RADIO (Кастомные) */
+.form-check-group {
   display: flex;
-  flex-wrap: wrap;          /* Перенос на новую строку, если не влезают */
-  gap: 16px;                /* Отступ между элементами группы */
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 12px;
 }
-/* --- Переключатель-кнопка (как "Телефон / Telegram" у Софии) --- */
-.form-switch-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+.form-check {
+  display: inline-flex;
+  align-items: flex-start; /* Выравнивание по верху, если текст длинный */
+  gap: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.4;
+  transition: color 0.2s ease;
 }
-.form-switch {
-  position: relative;
-}
-/* Прячем настоящий radio, но оставляем доступным для скринридеров */
-.form-switch input[type="radio"] {
+.form-check:hover {color: var(--accent);}
+/* Скрываем стандартный инпут, но оставляем его доступным для клавиатуры */
+.form-check input {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
-/* Стилизуем label как кнопку */
-.form-switch label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--text);
-  transition: all 0.3s ease;
-}
-.form-switch label:hover {
-  border-color: var(--accent);
-}
-/* Активная кнопка (когда radio выбран) */
-.form-switch input[type="radio"]:checked + label {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--white);
-  font-weight: 500;
-}
-/* --- Чекбокс согласия (маленький, 15px) --- */
-.form-checkbox-consent {
-  display: flex;
-  align-items: flex-start;  /* Текст начинается сверху, а не по центру */
-  gap: 10px;
-  margin-bottom: 20px;
-	accent-color: var(--accent);
-}
-.form-checkbox-consent input[type="checkbox"] {
-  width: 15px;              /* Меньше обычного (как в UI Kit) */
-  height: 15px;
-  margin-top: 2px;          /* Выравнивание по первой строке текста */
+/* Общий стиль для кастомной метки (квадрат или круг) */
+.form-check-mark {
   flex-shrink: 0;
-}
-.form-checkbox-consent label {
-  font-size: 14px;
-  color: var(--secondary);  /* Серый текст (как у Софии) */
-  line-height: 1.4;
-  cursor: pointer;
-}
-/* --- Ссылка внутри согласия (наследуем стиль, не плодим классы) --- */
-.form-checkbox-consent a {
-  color: inherit; /* Берет серый цвет у родителя */
-  text-decoration: underline;
-  text-underline-offset: 3px; /* Отступ подчеркивания от текста (современно и аккуратно) */
-  transition: color 0.3s ease;
-}
-.form-checkbox-consent a:hover {
-  color: var(--accent); /* Фирменный зеленый при наведении */
-}
-/* --- 4. FILE UPLOAD --- */
-/* Скрываем нативный input */
-.form-file input[type="file"] {
-  display: none;
-}
-/* Стилизуем label как кнопку */
-.form-file {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  color: var(--text);
-}
-.form-file:hover {
-  border-color: var(--accent);
-}
-/* Иконка (опционально) */
-.form-file::before {
-  content: '';
-  display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2361696E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='17 8 12 3 7 8'/%3E%3Cline x1='12' y1='3' x2='12' y2='15'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
+  border: 2px solid var(--border);
+  background-color: var(--white);
+  border-radius: 4px; /* Для чекбокса */
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 2px; /* Чуть опустить, чтобы было по центру первой строки текста */
 }
-/* Имя файла (добавляется через JS) */
-.form-file .file-name {
+/* Специфика для RADIO (круг) */
+.form-radio .form-check-mark {border-radius: 50%;}
+/* Состояние: Checked (Выбрано) */
+.form-check input:checked + .form-check-mark {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+/* Галочка для чекбокса */
+.form-checkbox input:checked + .form-check-mark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Точка для радио */
+.form-radio input:checked + .form-check-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+/* Состояние: Focus (для доступности с клавиатуры) */
+.form-check input:focus-visible + .form-check-mark {box-shadow: var(--form-focus-ring);}
+/* Состояние: Disabled */
+.form-check input:disabled + .form-check-mark {
+  background-color: var(--bglight);
+  border-color: var(--border);
+  cursor: not-allowed;
+}
+.form-check input:disabled ~ .form-check-text {
+  color: var(--form-disabled-text);
+  cursor: not-allowed;
+}
+/* 6. FILE INPUT (Загрузка файлов) */
+.form-file-input {display: none; /* Полностью скрываем стандартный инпут */}
+.form-file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 20px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-base);
+  background-color: var(--white);
   color: var(--secondary);
-  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
 }
-/* Расположение кнопки и чекбокса в ряд */
+.form-file-label svg {
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+.form-file-label:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-light);
+  color: var(--text);
+}
+.form-file-label:hover svg {transform: scale(1.1);}
+/* Состояние: Focus для файла */
+.form-file-input:focus-visible + .form-file-label {
+  border-color: var(--accent);
+  box-shadow: var(--form-focus-ring);
+}
+/* 6. FILE INPUT: Drag-and-Drop состояния */
+.form-file-wrapper.is-dragging .form-file-label {
+  border-color: var(--accent);
+  background-color: var(--accent-light);
+  transform: scale(1.01);
+}
+/* 7. КНОПКИ ДЕЙСТВИЙ (ACTIONS) */
 .form-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-top: 32px;
-  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
 }
-@media (max-width: 768px) {
-  .form-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
+/* Спиннер для состояния загрузки */
+.button_primary.is-loading {
+  position: relative;
+  color: transparent !important; /* Скрываем текст */
+  pointer-events: none; /* Блокируем клики */
 }
-/* --- 5. BUTTONS --- */
-/* Вторичная кнопка (белая с рамкой) */
-.button-secondary {
-  background: var(--white);
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* 8. ГЛОБАЛЬНЫЕ СОСТОЯНИЯ ФОРМЫ */
+.form-message {
+  padding: 16px 20px;
+  border-radius: var(--radius-base);
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.form-message_success {
+  background-color: var(--accent-light);
+  color: var(--text);
+  border: 1px solid var(--accent);
+}
+.form-message_error {
+  background-color: #fdecea; /* Светло-красный фон */
+  color: var(--ferror);
+  border: 1px solid var(--ferror);
+}
+/* 9. КНОПКИ (BUTTONS) */
+/* Базовый класс для всех кнопок и ссылок-кнопок */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Отступ между иконкой и текстом, если есть */
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: var(--radius-base);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--form-transition);
+  white-space: nowrap;
+}
+/* Primary: Основная кнопка действия (Зеленая) */
+.button_primary {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+.button_primary:hover {
+  background-color: var(--btnhover); /* #add60d из твоего style.css */
+  border-color: var(--btnhover);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+/* Secondary: Вторичная кнопка (Прозрачная с рамкой) */
+.button_secondary {
+  background-color: transparent;
   color: var(--text);
   border-color: var(--border);
 }
-.button-secondary:hover {
-  background: var(--bglight);
+.button_secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background-color: var(--white);
 }
-.button-filter {
-  padding: 8px 20px;
-  font-size: 14px;
-}
-/* Кнопка на всю ширину (для мобильных или главных действий) */
-.button--full {
-  width: 100%;
-  text-align: center;
-}
-/* Маленькая кнопка (для удаления файлов и т.п.) */
-.button_small {
-  padding: 6px 12px;
-  font-size: 12px;
-}
-/* Заблокированная кнопка */
-.button:disabled, .button[disabled] {
-  opacity: 0.5;
+/* Состояние: Disabled (Заблокирована) */
+.button:disabled, .button.is-disabled {
+  background-color: var(--bglight);
+  color: var(--form-disabled-text);
+  border-color: var(--border);
   cursor: not-allowed;
-  pointer-events: none;
+  transform: none !important; /* Отменяем hover-эффекты */
 }
-/* СТИЛИ ДЛЯ PLAYGROUND (form.html) */
-.playground-fieldset {
-  display: block;           /* ← Блочный элемент, не flex */
-  width: 100%;
-  padding: 30px;
-  margin-bottom: 30px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+/* Состояние: Loading (Загрузка) */
+.button.is-loading {
+  position: relative;
+  color: transparent !important; /* Скрываем текст, но сохраняем ширину кнопки */
+  pointer-events: none; /* Запрещаем клики */
 }
-.playground-fieldset legend {
-  position: static;         /* ← Показываем legend (не скрываем) */
-  width: auto;
-  height: auto;
-  padding: 0 10px;
-  font-family: 'Inter-Bold', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 20px;
+/* Спиннер внутри кнопки */
+.button.is-loading .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
-.playground-fieldset h3 {
-  font-family: 'Inter-Medium', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-  margin: 25px 0 15px;
-}
-.playground-fieldset h3:first-of-type {
-  margin-top: 0;
-}
-/* Разделитель между группами */
-.playground-fieldset + .playground-fieldset {
-  margin-top: 40px;
+/* Контейнер для действий формы (выравнивание кнопок) */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }

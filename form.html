@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Алексей Помазов — инженерное проектирование | POMAZOV.PRO</title>
+    <meta name="DESCRIPTION" content="" />
+    <meta name="KEYWORDS" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/icons/favicon_180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/common/icons/favicon_192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/common/icons/favicon_512x512.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/common/icons/favicon_96x96.png" />
+    <link rel="shortcut icon" href="assets/img/common/icons/favicon.ico" />
+    <!-- СТИЛИ (порядок важен!) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/css/media.css" />
+  </head>
+
+  <body>
+    <header class="header no-print">
+      <nav class="navbar" id="navbar" aria-label="Главная навигация">
+        <div class="container">
+          <a href="index.html" class="navbar-logo">
+            <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+          </a>
+          <div class="navbar-menu">
+            <ul>
+              <li class="has_submenu">
+                <a href="#">Проекты</a>
+                <ul>
+                  <li><a href="service.html">Дома</a></li>
+                  <li><a href="service.html">Бани</a></li>
+                  <li><a href="service.html">Беседки</a></li>
+                  <li><a href="service.html">Хозблоки</a></li>
+                </ul>
+              </li>
+              <li class="has_submenu">
+                <a href="#">Проектирование</a>
+                <ul>
+                  <li><a href="service.html">Индивидуальное</a></li>
+                  <li><a href="service.html">BIM-проектирование</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Обо мне</a></li>
+              <li class="has_submenu">
+                <a href="#">Полезности</a>
+                <ul>
+                  <li><a href="service.html">Блог</a></li>
+                  <li><a href="service.html">Материалы</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar-menu-mobile-cta">
+              <a href="#" class="button button_primary">Хочу проект</a>
+            </div>
+          </div>
+          <div class="navbar-actions">
+            <a href="#" class="button button_primary">Хочу проект</a>
+            <!-- сюда можно добавить ещё элементы -->
+          </div>
+          <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 0. ЗАГОЛОВОК СТРАНИЦЫ -->
+      <header class="page-header">
+        <div class="container">
+          <div class="col_8 col_md12">
+            <nav class="breadcrumbs">
+              <a href="index.html">Главная</a>
+              <span class="separator">/</span>
+              <span class="current">Формы</span>
+            </nav>
+            <p class="page-description">Презентация форм.</p>
+          </div>
+          <div class="col_4 col_md12"></div>
+        </div>
+      </header>
+      <section>
+        <div class="container">
+          <form>
+            <!-- 1. ПОЛЯ ВВОДА (INPUTS) -->
+            <fieldset class="fieldset_gray">
+              <legend>1. Поля ввода (Inputs)</legend>
+              
+              <div class="grid grid_3 grid_md1">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Ваше имя <span class="form-required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Телефон <span class="form-required">*</span></label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                  <span class="form-hint">Мы перезвоним вам в течение рабочего дня</span>
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email</label>
+                  <input type="email" id="client-email" name="email" class="form-input is-error" value="ivan@без-собаки" aria-invalid="true" placeholder="yourname@mail.com">
+                  <span class="form-error">Пожалуйста, введите корректный email адрес</span>
+                </div>
+              </div>
+
+              <div class="grid grid_2 grid_md1">
+                <div class="form-group">
+                  <label for="area-land" class="form-label">Площадь участка (соток)</label>
+                  <input type="number" id="area-land" name="area_land" class="form-input" placeholder="10">
+                </div>
+                <div class="form-group">
+                  <label for="area-house" class="form-label">Площадь дома (м²)</label>
+                  <input type="number" id="area-house" name="area_house" class="form-input" placeholder="120">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="comments" class="form-label">Комментарий к проекту</label>
+                <textarea id="comments" name="comments" class="form-input form-textarea" rows="4" placeholder="Опишите ваши пожелания..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="disabled-field" class="form-label">Заблокированное поле (:disabled)</label>
+                <input type="text" id="disabled-field" class="form-input" value="Это поле нельзя редактировать" disabled>
+              </div>
+            </fieldset>
+
+            <!-- 2. ПОЛЯ ВЫБОРА (SELECT, RADIO, CHECKBOX) -->
+            <fieldset class="fieldset_white">
+              <legend>2. Поля выбора (Selectors)</legend>
+              
+              <div class="form-group">
+                <label for="object-type" class="form-label">Тип объекта <span class="form-required">*</span></label>
+                <div class="form-select-wrapper">
+                  <select id="object-type" name="object_type" class="form-input form-select" required>
+                    <option value="" disabled selected>Выберите тип объекта</option>
+                    <option value="house">Каркасный дом</option>
+                    <option value="banya">Баня</option>
+                    <option value="gazebo">Беседка</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <span class="form-label">Предпочтительный способ связи</span>
+                <div class="form-check-group">
+                  <label class="form-check form-radio">
+                    <input type="radio" name="contact_method" value="phone" checked>
+                    <span class="form-check-mark"></span>
+                    <span class="form-check-text">Телефон</span>
+                  </label>
+                  <label class="form-check form-radio">
+                    <input type="radio" name="contact_method" value="telegram">
+                    <span class="form-check-mark"></span>
+                    <span class="form-check-text">Telegram</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <span class="form-label">Дополнительные разделы проекта</span>
+                <div class="form-check-group">
+                  <label class="form-check form-checkbox">
+                    <input type="checkbox" name="addons" value="eom" checked>
+                    <span class="form-check-mark"></span>
+                    <span class="form-check-text">Электроснабжение (ЭОМ) +8 000 ₽</span>
+                  </label>
+                  <label class="form-check form-checkbox">
+                    <input type="checkbox" name="addons" value="ovik" disabled>
+                    <span class="form-check-mark"></span>
+                    <span class="form-check-text">Отопление и вентиляция (недоступно)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-check form-checkbox">
+                  <input type="checkbox" name="agreement" required>
+                  <span class="form-check-mark"></span>
+                  <span class="form-check-text">Я согласен на <a href="privacy.html" target="_blank">обработку персональных данных</a> <span class="form-required">*</span></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- 3. ФАЙЛЫ И МЕДИА (С поддержкой Drag-and-Drop через JS) -->
+            <fieldset class="fieldset_accent">
+              <legend>3. Файлы и медиа (File Upload)</legend>
+              
+              <div class="form-group">
+                <label class="form-label">Прикрепить план участка или референсы</label>
+                <div class="form-file-wrapper" id="drop-zone">
+                  <input type="file" id="file-attach" name="file" class="form-file-input" accept=".jpg,.jpeg,.png,.pdf">
+                  <label for="file-attach" class="form-file-label">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                    <span class="form-file-main-text" style="font-weight: 600; color: var(--text);">Нажмите для загрузки или перетащите файл</span>
+                    <span class="form-file-name" style="color: var(--accent); font-weight: 600; display: none;"></span>
+                    <span class="form-hint">JPG, PNG, PDF до 10 МБ</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 4. КНОПКИ ДЕЙСТВИЙ (ACTIONS) -->
+            <fieldset class="fieldset_gray">
+              <legend>4. Кнопки действий</legend>
+              <div class="form-actions">
+                <button type="submit" class="button button_primary">Отправить заявку</button>
+                <button type="button" class="button button_secondary">Очистить форму</button>
+                <button type="button" class="button button_primary" disabled>Заблокирована</button>
+                <button type="button" class="button button_primary is-loading">
+                  <span class="spinner"></span> Отправка...
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- 5. ГЛОБАЛЬНЫЕ СОСТОЯНИЯ (STATES) -->
+            <fieldset class="fieldset_white">
+              <legend>5. Глобальные состояния формы</legend>
+              <div class="form-group">
+                <div class="form-message form-message_success">
+                  <strong>Успешно!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-message form-message_error">
+                  <strong>Ошибка отправки!</strong> Проверьте правильность заполнения полей или попробуйте позже.
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+			<div class="container">
+				<div class="footer-top">
+					<!-- Здесь будет логотип, меню, соцсети -->
+				</div>
+				<!-- Нижняя часть (копирайт и документы) -->
+				<div class="footer-bottom">
+					<div class="footer-copy">
+						<p class="footer-copy">© 2026–<script>document.write(new Date().getFullYear())</script> POMAZOV.PRO</p>
+					</div>
+					<div class="footer_docs">
+						<a href="oferta.html" target="_blank">Оферта на покупку проекта дома</a>
+						<span>•</span>
+						<a href="privacy.html" target="_blank">Обработка персональных данных</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+			</svg>
+		</a>
+		<a href="#top" class="scroll-to-top" aria-label="Наверх">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg>
+		</a>
+
+		<script src="assets/js/main.js"></script>
+    <script src="assets/js/form.js"></script>
+  </body>
+</html>
