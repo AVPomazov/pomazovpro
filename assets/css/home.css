@@ -1,5 +1,4 @@
 /* CSS Document */
-
 /* HERO SLIDER - Слайдер на главной странице */
 .hero-slider {
   position: relative;
@@ -29,7 +28,7 @@
   visibility: visible;
 }
 /* Фоновое изображение */
-.slide-bg {
+.slide_bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -59,7 +58,7 @@
   position: relative;
   z-index: 3;
   height: 100%;
-	width: 60%;
+	width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Центрирование по вертикали */
@@ -68,21 +67,32 @@
   color: #fff;
 }
 .slide-content h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
 	text-transform: uppercase;
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   animation: slideInUp 0.8s ease;
+  text-align: left;
+}
+.slide-content h2.accent{
+  color: var(--accent);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 .slide-content p {
   font-size: 1rem;
-	text-align: justify;
+	text-align: left;
   margin-bottom: 30px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  color: var(--secondary);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   animation: slideInUp 0.8s ease 0.2s both; /* Задержка 0.2s */
 }
-
+.slide-content p.accent{
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
 /* КОНТЕНТ СЛАЙДА С ПЛАВНЫМ ПОЯВЛЕНИЕМ */
 /* Исходное состояние — элементы скрыты и смещены вниз */
 .slide-content h2,.slide-content p,.slide-content .button {
@@ -106,7 +116,6 @@
   transform: translateY(0);
   transition: opacity 0.9s ease, transform 0.9s ease /* Задержка 0.6с */
 }
-
 /* КНОПКИ НАВИГАЦИИ */
 .slider-prev,.slider-next {
   position: absolute;
@@ -123,17 +132,11 @@
   transition: all 0.3s ease;
   border-radius: 50%;
 }
-.slider-prev:hover,
-.slider-next:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+.slider-prev:hover, .slider-next:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
-.slider-prev {
-  left: 20px;
-}
-.slider-next {
-  right: 20px;
-}
-
+.slider-prev {left: 20px;}
+.slider-next {right: 20px;}
 /* ТОЧКИ-ИНДИКАТОРЫ */
 .slider-dots {
   position: absolute;
@@ -148,12 +151,13 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  background-color: var(--white);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .slider-dot.active {
-  background-color: var(--lgreen);
+  background-color: var(--accent);
   width: 30px;
   border-radius: 6px;
 }

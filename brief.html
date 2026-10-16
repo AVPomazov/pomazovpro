@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Алексей Помазов — инженерное проектирование | POMAZOV.PRO</title>
+		<meta name="DESCRIPTION" content=""/>
+		<meta name="KEYWORDS" content=""/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+		<!-- FAVICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/icons/favicon_180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="assets/img/common/icons/favicon_192x192.png">
+		<link rel="icon" type="image/png" sizes="512x512" href="assets/img/common/icons/favicon_512x512.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/common/icons/favicon_96x96.png">
+		<link rel="shortcut icon" href="assets/img/common/icons/favicon.ico">
+		<!-- СТИЛИ (порядок важен!) -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/form.css">
+		<link rel="stylesheet" href="assets/css/media.css">
+    <link rel="stylesheet" href="assets/css/brief.css">
+		<!-- СКРИПТЫ (порядок важен!) -->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/slider.js"></script>
+	</head>
+	
+	<body>
+		<header class="header no-print">
+      <nav class="navbar" id="navbar" aria-label="Главная навигация">
+        <div class="container">
+          <a href="index.html" class="navbar-logo">
+            <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+          </a>
+          <div class="navbar-menu">
+            <ul>
+              <li class="">
+                <a href="projects.html">Проекты</a>
+                <!-- <ul>
+                  <li><a href="service.html">Дома</a></li>
+                  <li><a href="service.html">Бани</a></li>
+                  <li><a href="service.html">Беседки</a></li>
+                  <li><a href="service.html">Хозблоки</a></li>
+                </ul> -->
+              </li>
+              <li class="has_submenu">
+                <a href="#">Проектирование</a>
+                <ul>
+                  <li><a href="projecting.html">Индивидуальное</a></li>
+                  <li><a href="service.html">BIM-проектирование</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Обо мне</a></li>
+              <li class="has_submenu">
+                <a href="#">Полезности</a>
+                <ul>
+                  <li><a href="service.html">Блог</a></li>
+                  <li><a href="service.html">Материалы</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar-menu-mobile-cta">
+              <a href="#" class="button button_primary">Хочу проект</a>
+            </div>
+          </div>
+          <div class="navbar-actions">
+            <a href="#" class="button button_primary">Хочу проект</a>
+            <!-- сюда можно добавить ещё элементы -->
+          </div>
+          <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+		
+		<main>
+			<!-- 0. ЗАГОЛОВОК СТРАНИЦЫ -->
+      <header class="page-header">
+        <div class="container">
+          <div class="col_8 col_md12">
+            <nav class="breadcrumbs">
+              <a href="index.html">Главная</a>
+              <span class="separator">/</span>
+              <a href="projecting.html">Индивидуальное проектирование</a>
+              <span class="separator">/</span>
+              <span class="current">Бриф на проектирование</span>
+            </nav>
+            <!-- <p class="page-eyebrow">pomazov.pro</p> -->
+            <h1 class="page-title">Бриф на проектирование</h1>
+            <!-- <p class="page-description">Заполните бриф.</p>
+          </div> -->
+          <div class="col_4 col_md12"></div>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container">
+          <!-- БЛОК УПРАВЛЕНИЯ -->
+          <div class="brief_controls">
+            <!-- Сюда пойдут: прогресс-бар + кнопки навигации -->
+            <div class="col_8 col_md_12">
+              <ul class="brief_tabs">
+                <li>
+                  <a href="#client" class="nav_link">
+                    <span class="number">1</span>
+                    <span class="word">Заказчик</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#area" class="nav_link">
+                    <span class="number">2</span
+                      ><span class="word">Участок</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#structures" class="nav_link">
+                    <span class="number">3</span>
+                    <span class="word">Конструкции</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#fasades" class="nav_link">
+                    <span class="number">4</span>
+                    <span class="word">Фасады</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#plans" class="nav_link">
+                    <span class="number">5</span>
+                    <span class="word">Планировки</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="tools col_4 col_md_12">						
+              <a href="#" class="print">
+                <img class="print_img" src="assets/img/brief/printer-svgrepo-com.svg" alt="Печать">
+                Распечатать
+              </a>
+              <a href="#" class="clear">Сброс</a>
+            </div> -->
+          </div>
+
+          <!-- БЛОК ФОРМЫ -->
+          <form class="brief_form">
+
+            <!-- Шаг 1: Заказчик -->
+            <fieldset class="active">
+              <legend>Шаг 1: Заказчик</legend>
+
+              <!-- Группа 1.1: Персональная информация -->
+              <!-- <div class="col_12">
+                <h4 class="">1.1. Персональная информация</h4>
+              </div>
+              <div class="grid grid_3 grid_sm1">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Ваши ФИО <span class="form-required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Иванов Иван Иванович" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Телефон <span class="form-required">*</span></label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email <span class="form-required">*</span></label>
+                  <input type="email" id="client-email" name="email" class="form-input" aria-invalid="true" placeholder="yourname@mail.com">
+                </div>
+              </div> -->
+
+              <!-- Группа 1.2: Тип постройки -->
+              <!-- <div class="col_12">
+                <h4 class="">1.2. Тип постройки</h4>
+                <p class="form-label">Выберите один или несколько типов (отметьте галочкой)</p>
+              </div>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_living_house.png");'>
+                <input type="checkbox" name="building_type" value="жилой дом">
+                <span>Жилой дом</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_bath.png");'>
+                <input type="checkbox" name="building_type" value="баня">
+                <span>Баня</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_garage.png");'>
+                <input type="checkbox" name="building_type" value="гараж">
+                <span>Гараж</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_guest_house.png");'>
+                <input type="checkbox" name="building_type" value="гостевой дом">
+                <span>Гостевой дом</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_staff_house.png");'>
+                <input type="checkbox" name="building_type" value="дом персонала">
+                <span>Дом персонала</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_warehouse.png");'>
+                <input type="checkbox" name="building_type" value="хозблок">
+                <span>Хозблок</span>
+              </label>
+              <label class="icon-card" style='background-image: url("assets/img/brief/bld_type_pavilion.png");'>
+                <input type="checkbox" name="building_type" value="беседка">
+                <span>Беседка</span>
+              </label>
+              <label class="icon-card">
+                <input type="checkbox" name="building_type" value="custom" id="buildingTypeCustom" data-show="customBuildingField">
+                <span class="building-type-label">Свой вариант</span>
+              </label>
+              <div class="col_12 form-group icon-card-custom custom-option" id="customBuildingField">
+                <input type="text" class="form-input" placeholder="Например: Дом с мансардой и гаражом">
+              </div> -->
+
+              <!-- Группа 1.3: Функциональное использование -->
+              <!-- <div class="col_12">
+                <h4>1.3. Функциональное использование</h4>
+              </div>
+              <div class="col_12">
+                <div class="">
+                  <label class="form-check form-radio">
+                    <input type="radio" name="usage" value="permanent">
+                    <span class="form-check-mark"></span>
+									  <span>Постоянное проживание</span>
+                  </label>
+                  <label class="form-check form-radio">
+                    <input type="radio" name="usage" value="seasonal">
+                    <span class="form-check-mark"></span>
+									  <span>Сезонное проживание</span>
+                  </label>
+                </div>
+              </div> -->
+
+              <!-- Группа 1.4: Стартовая информация -->
+              <!-- <div class="col_12">
+                <h4>1.4. Стартовая информация для проектирования</h4>
+                <p class="form-label">Что у вас уже есть?</p>
+              </div>
+              <div class="form-check-group">
+                <label class="form-check form-checkbox">
+                  <input type="checkbox"  id="concept_check" name="concept" value="concept" data-show="concept_file-field">
+                  <span class="form-check-mark"></span>
+                  <span class="form-check-text">Концепция</span>
+                </label>
+                <label class="form-check form-checkbox">
+                  <input type="checkbox" id="esciz_check" name="esciz" value="esciz" data-show="esciz_file-field">
+                  <span class="form-check-mark"></span>
+								  <span>Эскиз</span>
+                </label>
+                <label class="form-check form-checkbox">
+                  <input type="checkbox" id="project_check" name="project" value="project" data-show="project_file-field">
+                  <span class="form-check-mark"></span>
+								  <span>Проект</span>
+                </label>
+                <label class="form-check form-checkbox">
+                  <input type="checkbox" id="site_check" data-show="site-field">
+                  <span class="form-check-mark"></span>
+								  <span>Ссылка на сайт</span>
+                </label>
+                <label class="form-check form-checkbox">
+                  <input type="checkbox" id="what-custom" data-show="what-custom-field">
+                  <span class="form-check-mark"></span>
+								  <span>Свой вариант</span>
+                </label>
+              </div> -->
+
+              <!-- Группа 1.5: Состав семьи -->
+              <!-- <div class="col_12">
+                <h4>1.5. Состав семьи</h4>
+                <p class="form-label">Семья</p>
+                <p class="form-label">Гости</p>
+                <p class="form-label">Ещё</p>
+              </div> -->
+
+            </fieldset>
+
+            <!-- Шаг 2: Участок -->
+            <fieldset>
+              <legend>Шаг 2: Участок</legend>
+            </fieldset>
+            <!-- Шаг 3: Конструкции -->
+            <fieldset>
+              <legend>Шаг 3: Конструкции</legend>
+            </fieldset>
+            <!-- Шаг 4: Фасады -->
+            <fieldset>
+              <legend>Шаг 4: Фасады</legend>
+            </fieldset>
+            <!-- Шаг 5: Планировки -->
+            <fieldset>
+              <legend>5: Планировки</legend>
+            </fieldset>
+
+            <!-- ЕДИНАЯ навигация между шагами -->
+
+          </form>
+        </div>
+      </section>
+		</main>
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-top">
+					<!-- Здесь будет логотип, меню, соцсети -->
+				</div>
+				<!-- Нижняя часть (копирайт и документы) -->
+				<div class="footer-bottom">
+					<div class="footer-copy">
+						<p class="footer-copy">© 2026–<script>document.write(new Date().getFullYear())</script> POMAZOV.PRO</p>
+					</div>
+					<div class="footer_docs">
+						<a href="oferta.html" target="_blank">Оферта на покупку проекта дома</a>
+						<span>•</span>
+						<a href="privacy.html" target="_blank">Обработка персональных данных</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+			</svg>
+		</a>
+		<a href="#top" class="scroll-to-top" aria-label="Наверх">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg>
+		</a>
+		
+	</body>
+</html>

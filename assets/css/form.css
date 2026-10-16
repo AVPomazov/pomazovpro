@@ -139,17 +139,18 @@ legend{
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
   width: 10px;
   height: 10px;
   border-right: 2px solid var(--text);
   border-bottom: 2px solid var(--text);
   transform: translateY(-70%) rotate(45deg);
-  pointer-events: none; /* Чтобы клик проходил сквозь стрелку к селекту */
+  pointer-events: none;
   transition: transform 0.2s ease;
 }
-/* Поворот стрелки при фокусе на селекте */
-.form-select-wrapper:focus-within::after {transform: translateY(-30%) rotate(225deg);}
+/* Поворот стрелки при открытии списка (класс добавляется через JS) */
+.form-select-wrapper.is-open::after {
+  transform: translateY(-30%) rotate(225deg);
+}
 /* 5. CHECKBOX И RADIO (Кастомные) */
 .form-check-group {
   display: flex;

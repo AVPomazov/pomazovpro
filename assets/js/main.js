@@ -51,6 +51,5 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
   
 });

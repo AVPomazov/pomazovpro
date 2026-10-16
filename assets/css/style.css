@@ -514,9 +514,9 @@ img {
   line-height: 1.3;
 }
 .card-text {
-  font-size: var(--p-size);
-  color: var(--secondary);  /* ← Вот он! */
-  line-height: var(--p-lh);
+  font-size: 16px;
+  color: var(--secondary);
+  line-height: 1.2;
   margin: 0;
 }
 /* Ссылка CTA */

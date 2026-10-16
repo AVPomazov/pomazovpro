@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Алексей Помазов — инженерное проектирование | POMAZOV.PRO</title>
+		<meta name="DESCRIPTION" content=""/>
+		<meta name="KEYWORDS" content=""/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+		<!-- FAVICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/icons/favicon_180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="assets/img/common/icons/favicon_192x192.png">
+		<link rel="icon" type="image/png" sizes="512x512" href="assets/img/common/icons/favicon_512x512.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/common/icons/favicon_96x96.png">
+		<link rel="shortcut icon" href="assets/img/common/icons/favicon.ico">
+		<!-- СТИЛИ (порядок важен!) -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/form.css">
+		<link rel="stylesheet" href="assets/css/media.css">
+		<link rel="stylesheet" href="assets/css/home.css">
+		<!-- СКРИПТЫ (порядок важен!) -->
+		<script src="assets/js/main.js"></script>
+	</head>
+	
+	<body>
+		<header class="header no-print">
+      <nav class="navbar" id="navbar" aria-label="Главная навигация">
+        <div class="container">
+          <a href="index.html" class="navbar-logo">
+            <img src="assets/img/common/toplogo.svg" alt="POMAZOV.PRO" />
+          </a>
+          <div class="navbar-menu">
+            <ul>
+              <li class="">
+                <a href="projects.html">Проекты</a>
+                <!-- <ul>
+                  <li><a href="service.html">Дома</a></li>
+                  <li><a href="service.html">Бани</a></li>
+                  <li><a href="service.html">Беседки</a></li>
+                  <li><a href="service.html">Хозблоки</a></li>
+                </ul> -->
+              </li>
+              <li class="has_submenu">
+                <a href="#">Проектирование</a>
+                <ul>
+                  <li><a href="projecting.html">Индивидуальное</a></li>
+                  <li><a href="service.html">BIM-проектирование</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">Обо мне</a></li>
+              <li class="has_submenu">
+                <a href="#">Полезности</a>
+                <ul>
+                  <li><a href="service.html">Блог</a></li>
+                  <li><a href="service.html">Материалы</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar-menu-mobile-cta">
+              <a href="#" class="button button_primary">Хочу проект</a>
+            </div>
+          </div>
+          <div class="navbar-actions">
+            <a href="#" class="button button_primary">Хочу проект</a>
+            <!-- сюда можно добавить ещё элементы -->
+          </div>
+          <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+		
+		<main>
+      <!-- 0. ЗАГОЛОВОК СТРАНИЦЫ -->
+      <header class="page-header">
+        <div class="container" style="flex-wrap: wrap;">
+          <div class="col_8 col_md12">
+            <nav class="breadcrumbs">
+              <a href="index.html">Главная</a>
+              <span class="separator">/</span>
+              <span class="current">Каталог проектов</span>
+            </nav>
+            <!-- <p class="page-eyebrow">pomazov.pro</p> -->
+            <h1 class="page-title">Каталог проектов</h1>
+            <p>Готовые проекты домов, хозблоков и беседок с понятной документацией.</p>
+          </div>
+          <div class="col_4 col_md12">
+            <span class="form-label">Тип проекта</span>
+            <button type="button" class="button button_secondary">Все</button>
+            <button type="button" class="button button_primary">Дома</button>
+            <button type="button" class="button button_primary">Бани</button>
+            <button type="button" class="button button_primary">Хозблоки</button>
+          </div>
+        </div>
+      </header>
+			<!--  -->
+			<section class="">
+				<div class="container">
+          <div class="grid grid_6" style="margin: 32px 0;">
+            <div class="form-select-wrapper">
+              <select id="object-type" name="object_type" class="form-input form-select" required>
+                <option value="" selected>Площадь</option>
+                <option value="house">до 100 м<sup>2</sup></option>
+                <option value="banya">100-150 м<sup>2</sup></option>
+                <option value="gazebo">150-200 м<sup>2</sup></option>
+                <option value="gazebo">>200 м<sup>2</sup></option>
+              </select>
+            </div>
+            <div class="form-select-wrapper">
+              <select id="object-type" name="object_type" class="form-input form-select" required>
+                <option value="" selected>Этажность</option>
+                <option value="house">1 этаж</option>
+                <option value="banya">2 этажа</option>
+                <option value="gazebo">С мансардой</option>
+              </select>
+            </div>
+            <div class="form-select-wrapper">
+              <select id="object-type" name="object_type" class="form-input form-select" required>
+                <option value="" selected>Спальни</option>
+                <option value="house">1</option>
+                <option value="banya">2</option>
+                <option value="gazebo">3</option>
+                <option value="gazebo">4</option>
+                <option value="gazebo">5</option>
+                <option value="gazebo">6</option>
+              </select>
+            </div>
+            <div class=""></div>
+            <div class=""></div>
+            <div class="form-select-wrapper">
+              <select id="object-type" name="object_type" class="form-input form-select" required>
+                <option value="" selected>По популярности</option>
+                <option value="house">А-Я</option>
+                <option value="banya">Я-А</option>
+              </select>
+            </div>
+					</div>
+					<div class="grid grid_4 grid_xl3 grid_md2 grid_sm1">
+						<!-- Проект 1 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 01</h3>
+							<div class="card-meta">
+								<span>96 м²</span>
+								<span>8×12 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 29 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 2 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 02</h3>
+							<div class="card-meta">
+								<span>110 м²</span>
+								<span>10×12 м</span>
+								<span>2 этажа</span>
+							</div>
+							<div class="card-price">
+								<span>от 35 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 3 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 03</h3>
+							<div class="card-meta">
+								<span>128 м²</span>
+								<span>12×12 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 41 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 4 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Хозблок" class="card-image">
+							<h3 class="card-title">Хозблок 01</h3>
+							<div class="card-meta">
+								<span>54 м²</span>
+								<span>6×9 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 18 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+
+            <!-- Проект 1 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 01</h3>
+							<div class="card-meta">
+								<span>96 м²</span>
+								<span>8×12 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 29 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 2 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 02</h3>
+							<div class="card-meta">
+								<span>110 м²</span>
+								<span>10×12 м</span>
+								<span>2 этажа</span>
+							</div>
+							<div class="card-price">
+								<span>от 35 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 3 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Дом" class="card-image">
+							<h3 class="card-title">Дом 03</h3>
+							<div class="card-meta">
+								<span>128 м²</span>
+								<span>12×12 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 41 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+						<!-- Проект 4 -->
+						<div class="card">
+							<img src="assets/img/projects/photo_8.jpg" alt="Хозблок" class="card-image">
+							<h3 class="card-title">Хозблок 01</h3>
+							<div class="card-meta">
+								<span>54 м²</span>
+								<span>6×9 м</span>
+								<span>1 этаж</span>
+							</div>
+							<div class="card-price">
+								<span>от 18 000 ₽</span>
+								<a href="#" class="card-link">Подробнее →</a>
+							</div>
+						</div>
+					</div>
+					<div class="col_12" style="text-align: center; margin: 32px 0;">
+						<a href="#more" class="button button_primary">Загрузить ещё</a>
+					</div>
+        </div>
+			</section>
+      <!-- ФОРМА -->
+			<section class="section section_gray">
+				<div class="container">
+					<h2 class="section-header">Не знаете, какой проект подойдёт?</h2>
+					<form>
+						<fieldset class="fieldset_accent">
+							<p class="card-text">Расскажите о своей задаче — помогу подобрать готовый проект или определю, что стоит разработать индивидуально.</p><br>
+							<div class="grid grid_3 grid_sm1">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Ваше имя <span class="form-required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Телефон <span class="form-required">*</span></label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email<span class="form-required">*</span></label>
+                  <input type="email" id="client-email" name="email" class="form-input" aria-invalid="true" placeholder="yourname@mail.com">
+                </div>
+              </div>
+							<div class="form-group">
+                <label for="comments" class="form-label">Комментарий</label>
+                <textarea id="comments" name="comments" class="form-input form-textarea" rows="4" placeholder="Опишите вашe ситуацию..."></textarea>
+              </div>
+							<div class="form-actions">
+								<button type="submit" class="button button_primary">Отправить заявку</button>
+								<label class="form-check form-checkbox">
+                  <input type="checkbox" name="agreement" required>
+                  <span class="form-check-mark"></span>
+                  <span class="form-check-text">Я согласен на <a href="privacy.html" target="_blank">обработку персональных данных</a> <span class="form-required">*</span></span>
+                </label>
+              </div>
+						</fieldset>
+					</form>
+				</div>
+			</section>
+		</main>
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-top">
+					<!-- Здесь будет логотип, меню, соцсети -->
+				</div>
+				<!-- Нижняя часть (копирайт и документы) -->
+				<div class="footer-bottom">
+					<div class="footer-copy">
+						<p class="footer-copy">© 2026–<script>document.write(new Date().getFullYear())</script> POMAZOV.PRO</p>
+					</div>
+					<div class="footer_docs">
+						<a href="oferta.html" target="_blank">Оферта на покупку проекта дома</a>
+						<span>•</span>
+						<a href="privacy.html" target="_blank">Обработка персональных данных</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<a href="https://t.me/pomazovpro" target="_blank" class="fab-telegram" aria-label="Написать в Telegram">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+			</svg>
+		</a>
+		<a href="#top" class="scroll-to-top" aria-label="Наверх">
+			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg>
+		</a>
+		
+	</body>
+</html>

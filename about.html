@@ -27,19 +27,19 @@
           </a>
           <div class="navbar-menu">
             <ul>
-              <li class="has_submenu">
-                <a href="#">Проекты</a>
-                <ul>
+              <li class="">
+                <a href="projects.html">Проекты</a>
+                <!-- <ul>
                   <li><a href="service.html">Дома</a></li>
                   <li><a href="service.html">Бани</a></li>
                   <li><a href="service.html">Беседки</a></li>
                   <li><a href="service.html">Хозблоки</a></li>
-                </ul>
+                </ul> -->
               </li>
               <li class="has_submenu">
                 <a href="#">Проектирование</a>
                 <ul>
-                  <li><a href="service.html">Индивидуальное</a></li>
+                  <li><a href="projecting.html">Индивидуальное</a></li>
                   <li><a href="service.html">BIM-проектирование</a></li>
                 </ul>
               </li>
@@ -175,6 +175,43 @@
           </div>
         </div>
       </section>
+      <!-- ФОРМА -->
+			<section class="section section_gray">
+				<div class="container">
+					<h2 class="section-header">Есть задача? Обсудим проект</h2>
+					<form>
+						<fieldset class="fieldset_accent">
+							<p class="card-text">Расскажите о своей задаче — помогу подобрать готовый проект или определю, что стоит разработать индивидуально.</p><br>
+							<div class="grid grid_3 grid_sm1">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Ваше имя <span class="form-required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Телефон <span class="form-required">*</span></label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email<span class="form-required">*</span></label>
+                  <input type="email" id="client-email" name="email" class="form-input" aria-invalid="true" placeholder="yourname@mail.com">
+                </div>
+              </div>
+							<div class="form-group">
+                <label for="comments" class="form-label">Комментарий</label>
+                <textarea id="comments" name="comments" class="form-input form-textarea" rows="4" placeholder="Опишите вашe ситуацию..."></textarea>
+              </div>
+							<div class="form-actions">
+								<button type="submit" class="button button_primary">Отправить заявку</button>
+								<label class="form-check form-checkbox">
+                  <input type="checkbox" name="agreement" required>
+                  <span class="form-check-mark"></span>
+                  <span class="form-check-text">Я согласен на <a href="privacy.html" target="_blank">обработку персональных данных</a> <span class="form-required">*</span></span>
+                </label>
+              </div>
+						</fieldset>
+					</form>
+				</div>
+			</section>
     </main>
 
     <footer class="footer">

@@ -30,7 +30,10 @@
 .grid_3 {grid-template-columns: repeat(3, 1fr);}
 .grid_4 {grid-template-columns: repeat(4, 1fr);}
 .grid_6 {grid-template-columns: repeat(6, 1fr);}
-.grid_11 {grid-template-columns: repeat(11, 1fr);}
+.grid_7 {grid-template-columns: repeat(7, 1fr);}
+.grid_8 {grid-template-columns: repeat(8, 1fr);}
+.grid_10 {grid-template-columns: repeat(10, 1fr);}
+.grid_12 {grid-template-columns: repeat(12, 1fr);}
 
 /* БУРГЕР-МЕНЮ (Мобильная навигация) */
 .burger {
@@ -69,6 +72,7 @@
 /* (xl) >1280px: десктопы */
 @media (max-width: 1280px) {
   .grid_xl3 {grid-template-columns: repeat(3, 1fr);}
+  .grid_xl6 {grid-template-columns: repeat(6, 1fr);}
 }
 /* (md)  960px: маленькие десктопы */
 @media (max-width: 960px) {
@@ -76,6 +80,7 @@
   .grid_md1 {grid-template-columns: repeat(1, 1fr);}
   .grid_md2 {grid-template-columns: repeat(2, 1fr);}
   .grid_md3 {grid-template-columns: repeat(3, 1fr);}
+  .grid_md4 {grid-template-columns: repeat(4, 1fr);}
   .page-header .container {flex-wrap: wrap;}
   .aside {position: static; margin-bottom: 32px;}  
   .aside ul {display: flex; flex-wrap: wrap; gap: 8px;}  

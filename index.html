@@ -16,6 +16,10 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/form.css">
 		<link rel="stylesheet" href="assets/css/media.css">
+		<link rel="stylesheet" href="assets/css/home.css">
+		<!-- СКРИПТЫ (порядок важен!) -->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/slider.js"></script>
 	</head>
 	
 	<body>
@@ -27,19 +31,19 @@
           </a>
           <div class="navbar-menu">
             <ul>
-              <li class="has_submenu">
-                <a href="#">Проекты</a>
-                <ul>
+              <li class="">
+                <a href="projects.html">Проекты</a>
+                <!-- <ul>
                   <li><a href="service.html">Дома</a></li>
                   <li><a href="service.html">Бани</a></li>
                   <li><a href="service.html">Беседки</a></li>
                   <li><a href="service.html">Хозблоки</a></li>
-                </ul>
+                </ul> -->
               </li>
               <li class="has_submenu">
                 <a href="#">Проектирование</a>
                 <ul>
-                  <li><a href="service.html">Индивидуальное</a></li>
+                  <li><a href="projecting.html">Индивидуальное</a></li>
                   <li><a href="service.html">BIM-проектирование</a></li>
                 </ul>
               </li>
@@ -72,8 +76,55 @@
 		
 		<main>
 			<!-- HERO SECTION -->
-			<section class="section section_white">
-				<div class="container"></div>
+			<section class="hero-slider">
+				<div class="slider-container">
+					<!-- Слайд 1 -->
+					<div class="slide active">
+						<div class="slide_bg" style="background-image: url('/assets/img/home/slider/slider-01.jpg');"></div>
+						<!-- <div class="slide-overlay"></div> -->
+						<div class="container">
+							<div class="slide-content">
+								<p class="accent">Проекты каркасных домов</p>
+								<h2>Проектируем будущее</h2>
+								<p>Готовые проекты домов, хозблоков и беседок с инженерным подходом к каждой детали.</p>
+								<a href="service.html" class="button button_secondary">Смотреть проекты →</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Слайд 2 -->
+					<div class="slide">
+						<div class="slide_bg" style="background-image: url('/assets/img/home/slider/slider-02.jpg');"></div>
+						<!-- <div class="slide-overlay"></div> -->
+						<div class="container">
+							<div class="slide-content">
+								<p class="accent">Индивидуальное проектирование</p>
+								<h2>Дом, созданный</h2><h2 class="accent"> для вас</h2>
+								<p>Разработаю проект с учетом участка, состава семьи, бюджета и ваших требований.</p>
+								<a href="service.html" class="button button_secondary">Заказать проект →</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Слайд 3 -->
+					<div class="slide">
+						<div class="slide_bg" style="background-image: url('/assets/img/home/slider/slider-03.jpg');"></div>
+						<!-- <div class="slide-overlay"></div> -->
+						<div class="container">
+							<div class="slide-content">
+								<p class="accent">Проекты каркасных домов</p>
+								<h2>От идеи</h2><h2 class="accent">до точных чертежей</h2>
+								<p>Полный комплект документации, по которому строителям понятно, что и как строить.</p>
+								<a href="service.html" class="button button_secondary">Смотреть проекты →</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Кнопки навигации -->
+				<button class="slider-prev" aria-label="Предыдущий слайд">❮</button>
+				<button class="slider-next" aria-label="Следующий слайд">❯</button>
+				<!-- Точки-индикаторы -->
+				<div class="slider-dots"></div>
 			</section>
 			<!-- ПОЧЕМУ СО МНОЙ УДОБНО белый -->
 			<section class="section section_white">
@@ -280,14 +331,38 @@
 			<!-- ФОРМА -->
 			<section class="section section_gray">
 				<div class="container">
-					<div class="col_8 col_md12">
-						<h2 class="section-header">Не знаете, какой проект подойдёт?</h2>
-						<p class="card-text" style="max-width: 600px; margin-bottom: 24px;">
-							Расскажите о своей задаче — помогу подобрать готовый проект или определю, что стоит разработать индивидуально.
-						</p>
-						<a href="brief.html" class="button">Заполнить бриф →</a>
-					</div>
-					<div class="col_4 col_md12"></div>
+					<h2 class="section-header">Не знаете, какой проект подойдёт?</h2>
+					<form>
+						<fieldset class="fieldset_accent">
+							<p class="card-text">Расскажите о своей задаче — помогу подобрать готовый проект или определю, что стоит разработать индивидуально.</p><br>
+							<div class="grid grid_3 grid_sm1">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Ваше имя <span class="form-required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Телефон <span class="form-required">*</span></label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email<span class="form-required">*</span></label>
+                  <input type="email" id="client-email" name="email" class="form-input" aria-invalid="true" placeholder="yourname@mail.com">
+                </div>
+              </div>
+							<div class="form-group">
+                <label for="comments" class="form-label">Комментарий</label>
+                <textarea id="comments" name="comments" class="form-input form-textarea" rows="4" placeholder="Опишите вашe ситуацию..."></textarea>
+              </div>
+							<div class="form-actions">
+								<button type="submit" class="button button_primary">Отправить заявку</button>
+								<label class="form-check form-checkbox">
+                  <input type="checkbox" name="agreement" required>
+                  <span class="form-check-mark"></span>
+                  <span class="form-check-text">Я согласен на <a href="privacy.html" target="_blank">обработку персональных данных</a> <span class="form-required">*</span></span>
+                </label>
+              </div>
+						</fieldset>
+					</form>
 				</div>
 			</section>
 		</main>
@@ -321,7 +396,6 @@
 				<polyline points="18 15 12 9 6 15"></polyline>
 			</svg>
 		</a>
-
-		<script src="assets/js/main.js"></script>
+		
 	</body>
 </html>
