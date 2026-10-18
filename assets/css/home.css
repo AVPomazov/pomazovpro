@@ -73,11 +73,11 @@
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
 }
 .slide-content .accent{
   color:var(--accent);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); */
 }
 .slide.active .slide-content .button {
   opacity: 1;
@@ -90,14 +90,14 @@
 	text-align: left;
   margin-bottom: 30px;
   color: var(--secondary);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); */
   animation: slideInUp 0.8s ease 0.2s both; /* Задержка 0.2s */
 }
 .slide-content p.accent{
   color: var(--accent);
   font-size: 24px;
   font-weight: 600;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); */
 }
 /* КОНТЕНТ СЛАЙДА С ПЛАВНЫМ ПОЯВЛЕНИЕМ */
 /* Исходное состояние — элементы скрыты и смещены вниз */

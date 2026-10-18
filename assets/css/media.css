@@ -192,6 +192,7 @@
     height: 40px;
   }
   .section {padding: 40px 0;}
+  .slider-prev, .slider-next {display: none;}
 } 
 /* (s) (опционально) */
 @media (max-width: 480px) {
