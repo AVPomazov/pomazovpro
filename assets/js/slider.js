@@ -109,4 +109,39 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================================================
   
   startAutoPlay(); // Запускаем автопереключение
+
+  // ==========================================================================
+  // СВАЙП ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+  // ==========================================================================
+  
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Запоминаем точку, где палец коснулся экрана
+  slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true }); // passive: true улучшает производительность скролла
+
+  // Запоминаем точку, где палец оторвался от экрана
+  slider.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  // Функция обработки свайпа
+  function handleSwipe() {
+    const threshold = 50; // Минимальное расстояние (в пикселях) для регистрации свайпа
+    const diff = touchStartX - touchEndX;
+
+    if (diff > threshold) {
+      // Свайп влево -> Следующий слайд
+      nextSlide();
+      resetAutoPlay();
+    } else if (diff < -threshold) {
+      // Свайп вправо -> Предыдущий слайд
+      prevSlide();
+      resetAutoPlay();
+    }
+    // Если разница меньше 50px, считаем это просто тапом (кликом) и ничего не делаем
+  }
 });
