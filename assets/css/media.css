@@ -136,9 +136,8 @@
   }
   .navbar-menu ul li a {
     font-size: 18px; /* ПОИГРАЙ С ЭТИМ: размер шрифта в мобильном меню */
-    padding: 16px 0;
-    border-bottom: 1px solid var(--bglight); /* ПОИГРАЙ С ЭТИМ: разделители между пунктами */
-    padding-left: 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--bglight);
   }
   .navbar-menu ul li a::after {display: none;}
   .navbar-menu ul li.has_submenu > a::before {content: "";}
@@ -193,6 +192,9 @@
   }
   .section {padding: 40px 0;}
   .slider-prev, .slider-next {display: none;}
+  .slide_bg {
+    background-position: 35% center; /* Сдвигаем фокус вправо */
+  }
 } 
 /* (s) (опционально) */
 @media (max-width: 480px) {

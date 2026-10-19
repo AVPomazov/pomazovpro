@@ -54,11 +54,11 @@
               </li>
             </ul>
             <div class="navbar-menu-mobile-cta">
-              <a href="#" class="button button_primary">Хочу проект</a>
+              <a href="projects.html" class="button button_primary">Хочу проект</a>
             </div>
           </div>
           <div class="navbar-actions">
-            <a href="#" class="button button_primary">Хочу проект</a>
+            <a href="projects.html" class="button button_primary">Хочу проект</a>
             <!-- сюда можно добавить ещё элементы -->
           </div>
           <!-- КНОПКА БУРГЕР (видна только на мобильных) -->
@@ -397,6 +397,29 @@
 		<!-- СКРИПТЫ (порядок важен!) -->
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/slider.js"></script>
+
+		<div id="debug-screen-size" style="
+			position: fixed;
+			bottom: 10px;
+			left: 10px;
+			background: rgba(0,0,0,0.8);
+			color: #fff;
+			padding: 8px 12px;
+			border-radius: 6px;
+			font-size: 14px;
+			font-family: monospace;
+			z-index: 9999;
+			pointer-events: none;
+		"></div>
+
+		<script>
+			const debugEl = document.getElementById('debug-screen-size');
+			function updateSize() {
+				debugEl.textContent = `${window.innerWidth}px × ${window.innerHeight}px`;
+			}
+			updateSize();
+			window.addEventListener('resize', updateSize);
+		</script>
 		
 	</body>
 </html>

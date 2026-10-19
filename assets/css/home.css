@@ -167,3 +167,9 @@
   width: 30px;
   border-radius: 6px;
 }
+/* Убираем задержки для первого слайда при загрузке */
+.slide:first-child.active .slide-content h2,
+.slide:first-child.active .slide-content p,
+.slide:first-child.active .slide-content .button {
+  transition-delay: 0s;
+}
