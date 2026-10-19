@@ -165,7 +165,11 @@
     margin: 0;
   }
   .navbar-actions {display: none;}
-  .navbar-menu-mobile-cta{display: flex;justify-content: center;}
+  .navbar-menu-mobile-cta{
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
   /* Стилизуем скроллбар (опционально, для красоты) */
   .navbar-menu::-webkit-scrollbar {width: 7px;}
   .navbar-menu::-webkit-scrollbar-track {background: var(--bglight);}
