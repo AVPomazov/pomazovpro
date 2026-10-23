@@ -154,11 +154,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Если разница меньше 50px, считаем это просто тапом (кликом) и ничего не делаем
   }
 
-  // Выводит в консоль при загрузке и при изменении размера окна ПОТОМ УБРАТЬ!!!
-  function logScreenSize() {
-    console.log(`Ширина экрана: ${window.innerWidth}px | Высота: ${window.innerHeight}px`);
-  }
-
-  window.addEventListener('load', logScreenSize);
-  window.addEventListener('resize', logScreenSize);
 });
